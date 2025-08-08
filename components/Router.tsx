@@ -38,7 +38,7 @@ export function Router({ currentRoute, dogId, onNavigate }: RouterProps) {
           <Hero />
           <AboutBreed />
           <AboutFarm />
-          <AvailablePuppies onViewDog={(dogId: string) => onNavigate('dog-profile', dogId)} />
+          <AvailablePuppies />
           <Gallery />
           <Testimonials />
           <FAQ />

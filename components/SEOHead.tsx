@@ -98,7 +98,7 @@ export function SEOHead({
     canonicalLink.setAttribute('href', canonicalUrl);
 
     // Add structured data
-    const structuredData = {
+    const structuredData: any = {
       "@context": "https://schema.org",
       "@graph": [
         {
@@ -288,7 +288,9 @@ export function SEOHead({
         "aggregateRating": {
           "@type": "AggregateRating",
           "ratingValue": "5",
-          "reviewCount": "1"
+          "reviewCount": "1",
+          "bestRating": "5",
+          "worstRating": "1"
         }
       });
     }

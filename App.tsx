@@ -51,6 +51,15 @@ export default function App() {
   const seoData = getSEOData();
   const breadcrumbs = getBreadcrumbs();
 
+  const handleBreadcrumbNavigate = (href: string) => {
+    if (href.startsWith('/dog/')) {
+      const id = href.replace('/dog/', '');
+      navigate('dog-profile', id);
+    } else {
+      navigate('home');
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {/* SEO Components */}
@@ -61,7 +70,7 @@ export default function App() {
       
       {/* Breadcrumbs for better navigation structure */}
       {currentRoute === 'dog-profile' && (
-        <Breadcrumbs items={breadcrumbs} onNavigate={navigate} />
+        <Breadcrumbs items={breadcrumbs} onNavigate={handleBreadcrumbNavigate} />
       )}
       
       <Router 
