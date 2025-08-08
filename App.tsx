@@ -35,19 +35,16 @@ export default function App() {
     };
   };
 
-  // Generate breadcrumbs
   const getBreadcrumbs = () => {
     const breadcrumbs = [
-      { label: "Home", href: "/" }
+      { label: "Home", href: "/", current: false }
     ];
-
     if (currentRoute === 'dog-profile' && currentDog) {
       breadcrumbs.push(
-        { label: "Available Puppies", href: "/#puppies" },
-        { label: currentDog.name, current: true }
+        { label: "Available Puppies", href: "/#puppies", current: false },
+        { label: currentDog.name, current: true, href: `/dog/${dogId}` }
       );
     }
-
     return breadcrumbs;
   };
 
