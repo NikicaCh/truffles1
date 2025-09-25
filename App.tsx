@@ -28,7 +28,7 @@ export default function App() {
     }
     
     return {
-      title: "Truffles Macedonia - Premier Lagotto Romagnolo Breeders | Champion Bloodlines | Truffle Dogs Europe",
+      title: "Truffles Macedonia - Premium Lagotto Romagnolo | Champion Bloodlines | Truffle Dogs Europe",
       description: "Europe's leading Lagotto Romagnolo breeders since 1999. Champion bloodline puppies, health tested, authentic Italian truffle hunting dogs. Located in Macedonia, shipping worldwide. Expert breeding, lifetime support.",
       keywords: "Lagotto Romagnolo breeder, Lagotto Romagnolo puppies for sale, truffle hunting dogs, champion bloodlines, European dog breeder, Macedonia, Italian water dog, hypoallergenic dogs, curly coat dogs, working dogs, family dogs, truffle dogs Europe",
       canonicalUrl: "https://trufflesmacedonia.com"

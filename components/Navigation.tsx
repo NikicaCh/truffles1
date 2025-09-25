@@ -2,6 +2,9 @@
 import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
+
+import logo from "../public/logo.jpeg";
 
 interface NavigationProps {
   currentRoute: 'home' | 'dog-profile';
@@ -68,7 +71,8 @@ export function Navigation({ currentRoute, onNavigate }: NavigationProps) {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <button onClick={handleHomeClick} className="flex items-center space-x-2">
-              <span className="text-lg font-semibold text-primary">🐕 Truffles Macedonia</span>
+              <Image src={logo} alt="Truffles Macedonia logo" width={120} height={120} priority />
+              <span className="sr-only">Truffles Macedonia</span>
             </button>
           </div>
 

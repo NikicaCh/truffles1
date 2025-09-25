@@ -4,7 +4,7 @@ import './globals.css'
 export const metadata: Metadata = {
   metadataBase: new URL('https://trufflesmacedonia.com'),
   title: {
-    default: 'Truffles Macedonia - Premier Lagotto Romagnolo Breeders',
+    default: 'Truffles Macedonia - Premium Lagotto Romagnolo',
     template: '%s | Truffles Macedonia'
   },
   description: "Europe's leading Lagotto Romagnolo breeders since 1999. Champion bloodline puppies, health tested, Italian truffle hunting dogs.",

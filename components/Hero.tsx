@@ -80,7 +80,7 @@ export function Hero() {
             "@context": "https://schema.org",
             "@type": "PetStore",
             "name": "Truffles Macedonia",
-            "description": "Premier Lagotto Romagnolo breeders in Macedonia specializing in champion bloodlines and truffle hunting dogs",
+            "description": "Premium Lagotto Romagnolo in Macedonia specializing in champion bloodlines and truffle hunting dogs",
             "url": "https://trufflesmacedonia.com",
             "telephone": "+389-XX-XXX-XXX",
             "address": {
@@ -135,7 +135,7 @@ export function Hero() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <span className="text-yellow-600">Truffles Macedonia</span> - Premier <span className="text-yellow-600">Lagotto Romagnolo</span> Breeders
+              <span className="text-yellow-600">Truffles Macedonia</span>  <span className="text-yellow-600">- Premium Lagotto Romagnolo</span>
             </motion.h1>
             
             <motion.p 

@@ -14,7 +14,7 @@ interface SEOHeadProps {
 }
 
 export function SEOHead({
-  title = "Truffles Macedonia - Premier Lagotto Romagnolo Breeders | Champion Bloodlines | Truffle Hunting Dogs",
+  title = "Truffles Macedonia - Premium Lagotto Romagnolo | Champion Bloodlines | Truffle Hunting Dogs",
   description = "Truffles Macedonia - Europe's leading Lagotto Romagnolo breeders. Healthy, champion bloodline puppies from authentic Italian truffle hunting dogs. Health tested, socialized, perfect family companions. Located in Macedonia, shipping worldwide.",
   keywords = "Lagotto Romagnolo breeder, Lagotto Romagnolo puppies, truffle hunting dogs, dog breeder Macedonia, champion bloodlines, Italian water dog, hypoallergenic dogs, curly coat dogs, working dogs, family dogs, European dog breeder",
   canonicalUrl = "https://trufflesmacedonia.com",
@@ -106,7 +106,7 @@ export function SEOHead({
           "@id": "https://trufflesmacedonia.com/#business",
           "name": "Truffles Macedonia",
           "alternateName": "Truffles Macedonia Lagotto Romagnolo Breeders",
-          "description": "Premier Lagotto Romagnolo breeders specializing in champion bloodlines and authentic Italian truffle hunting dogs",
+          "description": "Premium Lagotto Romagnolo specializing in champion bloodlines and authentic Italian truffle hunting dogs",
           "url": "https://trufflesmacedonia.com",
           "telephone": "+389-XX-XXX-XXX",
           "email": "info@trufflesmacedonia.com",
@@ -199,7 +199,7 @@ export function SEOHead({
           "@id": "https://trufflesmacedonia.com/#website",
           "url": "https://trufflesmacedonia.com",
           "name": "Truffles Macedonia",
-          "description": "Premier Lagotto Romagnolo breeders in Macedonia",
+          "description": "Premium Lagotto Romagnolo in Macedonia",
           "publisher": {
             "@id": "https://trufflesmacedonia.com/#business"
           },
