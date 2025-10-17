@@ -67,8 +67,8 @@ export function AvailablePuppies() {
         >
           <h2 className="text-3xl md:text-4xl mb-6">Available Puppies</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Our carefully planned litters combine the best genetics, health testing, and early socialization to 
-            produce exceptional Lagotto Romagnolo puppies ready for their forever homes.
+          We pay special attention to the selection, socialization, and early training of every puppy. Each one follows a structured program emphasizing mental stability, a balanced temperament, and a strong working instinct.
+          We offer full support to new owners in upbringing, nutrition, training, and healthcare — ensuring a smooth transition from our home to yours.
           </p>
         </motion.div>
 
@@ -281,10 +281,10 @@ export function AvailablePuppies() {
           <h3 className="text-2xl text-center mb-6">What's Included with Your Puppy</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: "📋", title: "Health Records", desc: "Complete vaccination records and health certificate" },
-              { icon: "🧬", title: "Health Guarantee", desc: "2-year genetic health guarantee" },
-              { icon: "🎓", title: "Training Started", desc: "Basic commands and house training foundation" },
-              { icon: "📞", title: "Lifetime Support", desc: "Ongoing breeder support and advice" }
+              { icon: "📋", title: "Health Records", desc: "Complete veterinary documentation, vaccination records, and official health certificates for every puppy." },
+              { icon: "🧬", title: "Health Guarantee", desc: "Comprehensive genetic and orthopedic health guarantee, including certified hip and elbow evaluations." },
+              { icon: "🎓", title: "Training & Socialization", desc: "Each puppy begins early socialization and basic obedience to ensure a confident and balanced temperament." },
+              { icon: "☎️", title: "Lifetime Support", desc: "Continuous breeder support for nutrition, training, and health throughout your dog’s entire life." }
             ].map((item, index) => (
               <motion.div
                 key={index}
