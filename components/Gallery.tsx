@@ -101,8 +101,7 @@ export function Gallery() {
         >
           <h2 className="text-3xl md:text-4xl mb-6">Our Gallery</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Take a look at our beautiful Lagotto Romagnolo dogs, from playful puppies to champion adults, 
-            living their best lives at Truffles Macedonia.
+          A glimpse into the life of our Lagotto family — training, shows, daily adventures, and unforgettable moments at Truffles Macedonia.
           </p>
         </motion.div>
 

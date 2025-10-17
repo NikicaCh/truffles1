@@ -150,3 +150,16 @@
 html {
   font-size: var(--font-size);
 }
+
+
+@keyframes tm-fade-in-up {
+  0% { opacity: 0; transform: translateY(6px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@layer utilities {
+  .animate-fade-in-up {
+    animation: tm-fade-in-up 900ms ease-out both;
+  }
+}
+

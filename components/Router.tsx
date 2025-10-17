@@ -9,6 +9,7 @@ import { Gallery } from './Gallery';
 import { Testimonials } from './Testimonials';
 import { FAQ } from './FAQ';
 import { Contact } from './Contact';
+import { OurDogs } from './OurDogs';
 
 export type Route = 'home' | 'dog-profile';
 
@@ -39,6 +40,7 @@ export function Router({ currentRoute, dogId, onNavigate }: RouterProps) {
           <AboutBreed />
           <AboutFarm />
           <AvailablePuppies />
+          <OurDogs />
           <Gallery />
           <Testimonials />
           <FAQ />

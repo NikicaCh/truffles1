@@ -11,6 +11,7 @@ import { Testimonials } from "@/components/Testimonials";
 import { FAQ } from "@/components/FAQ";
 import { Contact } from "@/components/Contact";
 import { useRouter } from "next/navigation";
+import { OurDogs } from "@/components/OurDogs";
 
 export default function HomePage() {
   const router = useRouter();
@@ -22,6 +23,7 @@ export default function HomePage() {
         <AboutBreed />
         <AboutFarm />
         <AvailablePuppies />
+        <OurDogs />
         <Gallery />
         <Testimonials />
         <FAQ />

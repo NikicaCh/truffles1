@@ -6,6 +6,9 @@ import { Badge } from "./ui/badge";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { motion, useScroll, useTransform, useInView } from "motion/react";
 import { ChevronLeft, ChevronRight, MapPin, Phone, Star, Award, Heart, Shield } from "lucide-react";
+//import dog1 from "/public/all/dog1.jpeg";
+//import dog1 from "../public/dog1.jpeg";
+
 
 export function Hero() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -24,29 +27,31 @@ export function Hero() {
   // SEO-optimized hero images showcasing the breed
   const heroImages = [
     {
-      src: "https://images.unsplash.com/photo-1605568427561-40dd23c2acea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      alt: "Beautiful Lagotto Romagnolo dog with characteristic curly coat in natural outdoor setting",
-      title: "Champion Bloodline Lagotto Romagnolo",
-      caption: "Our breeding dogs showcase the perfect Lagotto conformation and temperament"
+      src: "/dog1.jpeg",
+      // alt: "Champion Lagotto Romagnolo dog in natural outdoor setting",
+      // title: "Champion Bloodline Lagotto Romagnolo",
+      // caption: "Our breeding dogs showcase perfect conformation and temperament"
     },
     {
-      src: "https://images.unsplash.com/photo-1544717297-fa95b6ee9643?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      alt: "Happy Lagotto Romagnolo puppy playing in countryside - perfect family companion",
-      title: "Healthy, Socialized Puppies",
-      caption: "Our puppies are raised with love and expert care from day one"
+      src: "/dog4.jpeg",
+      alt: "Healthy Lagotto Romagnolo puppy playing in countryside",
+      // title: "Healthy, Socialized Puppies",
+      // caption: "Our puppies are raised with love and expert care"
     },
     {
-      src: "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      alt: "Professional Lagotto Romagnolo breeding facility in Macedonia showing clean, modern environment",
-      title: "Professional Breeding Facility",
-      caption: "State-of-the-art facilities ensuring the best care for our dogs"
+      src: "/dog3.jpeg",
+      alt: "Champion Lagotto Romagnolo dog in natural outdoor setting",
+      // title: "Champion Bloodline Lagotto Romagnolo",
+      // caption: "Our breeding dogs showcase perfect conformation and temperament"
     },
     {
-      src: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      alt: "Lagotto Romagnolo family with multiple dogs showing breed characteristics and temperament",
-      title: "Our Lagotto Family",
-      caption: "Multiple generations of champion Lagotto Romagnolo bloodlines"
-    }
+      src: "/Dog10.55.jpeg",
+      alt: "Healthy Lagotto Romagnolo puppy playing in countryside",
+      // title: "Healthy, Socialized Puppies",
+      // caption: "Our puppies are raised with love and expert care"
+    },
+
+
   ];
 
   const nextImage = () => {
@@ -119,7 +124,7 @@ export function Hero() {
       </motion.div>
 
       <div className="relative z-10 min-h-screen flex flex-col justify-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-4 sm:py-8 lg:py-16">
           
           {/* SEO-Optimized Header Content */}
           <motion.header 
@@ -130,21 +135,23 @@ export function Hero() {
             transition={{ duration: 0.8 }}
           >
             <motion.h1 
-              className="text-3xl md:text-5xl lg:text-6xl text-foreground mb-6 leading-tight"
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.2 }}
+            className="hidden md:block text-3xl md:text-5xl lg:text-6xl text-foreground mb-6 leading-tight"
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <span className="text-yellow-600">Truffles Macedonia</span>  <span className="text-yellow-600">- Premium Lagotto Romagnolo</span>
-            </motion.h1>
-            
+              <span className="text-yellow-600">Truffles Macedonia</span>
+              <span className="text-yellow-600"> - Premium Lagotto Romagnolo</span>
+              </motion.h1>
+
+
             <motion.p 
               className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto mb-4 leading-relaxed"
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Discover authentic Lagotto Romagnolo puppies from champion European bloodlines. Our healthy, well-socialized truffle hunting dogs make perfect family companions with exceptional intelligence and loving temperaments.
+              Truffles Macedonia is a registered FCI kennel with over a decade of experience working with Lagotto Romagnolo dogs. Ranked among the most awarded kennels in Macedonia and beyond, we are recognized as one of Europe’s leading Lagotto Romagnolo breeders.
             </motion.p>
 
             <motion.div 
@@ -159,7 +166,7 @@ export function Hero() {
               </Badge>
               <Badge variant="outline" className="text-sm px-4 py-2">
                 <Award className="h-4 w-4 mr-2" />
-                25+ Years Experience
+                10+ Years Experience
               </Badge>
               <Badge variant="outline" className="text-sm px-4 py-2">
                 <Star className="h-4 w-4 mr-2" />
@@ -206,8 +213,8 @@ export function Hero() {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.3 }}
                     >
-                      <h2 className="text-xl md:text-2xl mb-2">{heroImages[currentImageIndex].title}</h2>
-                      <p className="text-sm md:text-base opacity-90 max-w-md">{heroImages[currentImageIndex].caption}</p>
+                      {/* <h2 className="text-xl md:text-2xl mb-2">{heroImages[currentImageIndex].title}</h2> */}
+                      {/* <p className="text-sm md:text-base opacity-90 max-w-md">{heroImages[currentImageIndex].caption}</p> */}
                     </motion.div>
                   </motion.div>
 
@@ -251,14 +258,13 @@ export function Hero() {
                 >
                   <div className="text-center max-w-4xl mx-auto">
                     <h2 className="text-2xl md:text-3xl text-foreground mb-6">
-                      Authentic Lagotto Romagnolo - Italy's Truffle Hunting Treasure
-                    </h2>
-                    <p className="text-muted-foreground mb-6 leading-relaxed">
+                    Our dogs have achieved Champion, Interchampion, and International Champion titles — a testament to their world-class quality and breeding excellence.                    </h2>
+                    {/* <p className="text-muted-foreground mb-6 leading-relaxed">
                       The Lagotto Romagnolo is the only dog breed specifically bred for truffle hunting. Originating from the wetlands of Italy, these intelligent, loyal, and hypoallergenic dogs have been perfecting their skills for centuries. At Truffles Macedonia, we preserve this ancient heritage while producing modern family companions that excel both in the field and at home.
                     </p>
                     <p className="text-muted-foreground mb-8 leading-relaxed">
                       Our champion bloodlines trace back to the finest Italian kennels, ensuring genetic diversity, health, and authentic breed characteristics. Each puppy is health tested, microchipped, and comes with comprehensive health guarantees and pedigree documentation.
-                    </p>
+                    </p> */}
                     
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                       <Button 
@@ -304,21 +310,21 @@ export function Hero() {
               {[
                 { 
                   icon: Award, 
-                  title: "Champion European Bloodlines", 
-                  desc: "Direct imports from renowned Italian and European kennels with proven genetics, superior conformation, and championship titles spanning multiple generations.",
-                  keywords: "champion bloodlines, European Lagotto, Italian import"
+                  title: "Champion Bloodlines & Proven Excellence", 
+                  desc: "Multi-Champion, Interchampion, and International Champion titles across Europe and beyond — including World Championship placements",
+                  keywords: "confirming top genetics, structure, and temperament."
                 },
                 { 
                   icon: Shield, 
-                  title: "Comprehensive Health Guarantees", 
-                  desc: "Complete health testing including hip/elbow scoring, eye clearances, genetic testing for hereditary conditions, plus 2-year health guarantee and lifetime breeder support.",
-                  keywords: "health tested, health guarantee, veterinary care"
+                  title: "Natural Environment & Ethical Breeding", 
+                  desc: "Dogs raised cage-free in a 1,000 m² forest area at 850 m altitude, enjoying natural light, fresh air, and social interaction for balanced behavior and optimal development.",
+                  // keywords: "health tested, health guarantee, veterinary care"
                 },
                 { 
                   icon: Heart, 
-                  title: "Authentic Truffle Hunting Heritage", 
-                  desc: "Preserved working abilities with natural truffle hunting instincts, proper temperament, and authentic Italian breed characteristics maintained through selective breeding.",
-                  keywords: "truffle hunting, working dogs, authentic Lagotto"
+                  title: "Health Tested & Lifetime Support", 
+                  desc: "Comprehensive health screening including hip/elbow X-rays, DNA testing for hereditary diseases, and ongoing veterinary care",
+                  keywords: "backed by a 2-year health guarantee and lifelong breeder guidance"
                 }
               ].map((feature, index) => (
                 <motion.article
@@ -351,7 +357,6 @@ export function Hero() {
             </div>
           </motion.section>
 
-          {/* Statistics Section - SEO Optimized */}
           <motion.section 
             className="text-center mt-20 py-16 bg-white/80 backdrop-blur-sm rounded-xl border border-gray-100"
             initial={{ opacity: 0, y: 50 }}
@@ -373,15 +378,15 @@ export function Hero() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 2 }}
             >
-              Over two decades of dedicated breeding excellence has made us one of Europe's most respected Lagotto Romagnolo breeders
+              Over a dedicated breeding excellence has made us one of Europe's most respected Lagotto Romagnolo breeders
             </motion.p>
             
             <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
               {[
                 { 
-                  number: "25+", 
+                  number: "10+", 
                   label: "Years Breeding Excellence", 
-                  desc: "Established 1999",
+                  desc: "Established 1015",
                   schema: "foundingDate"
                 },
                 { 
@@ -391,7 +396,7 @@ export function Hero() {
                   schema: "numberOfCustomers"
                 },
                 { 
-                  number: "75+", 
+                  number: "50+", 
                   label: "Champion Offspring", 
                   desc: "Show & Working Titles",
                   schema: "awards"

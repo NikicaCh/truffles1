@@ -18,23 +18,23 @@ export function AboutFarm() {
 
   const farmFeatures = [
     {
-      title: "25+ Years Experience",
-      description: "Decades of dedicated breeding experience with Lagotto Romagnolo",
-      icon: "📅"
+      title: "Experience & Excellence",
+      description: "Over a decade of dedicated breeding with award-winning Lagotto Romagnolos. Recognized among Europe’s leading and most decorated FCI kennels" ,
+      icon: "🏆"
     },
     {
       title: "Health Testing",
-      description: "All breeding dogs undergo comprehensive health testing including hips, elbows, and eyes",
-      icon: "🩺"
+      description: "All breeding dogs are fully DNA-tested and have certified hip and elbow X-rays. Ensuring sound genetics and freedom from hereditary diseases All breeding dogs undergo comprehensive health testing including hips, elbows, and eyes",
+      icon: "🧬"
     },
     {
-      title: "Early Socialization",
-      description: "Puppies are raised in our home with early neurological stimulation and socialization",
-      icon: "👶"
+      title: "Natural Living & Socialization",
+      description: "Our dogs live freely in a 1,000 m² forest environment at 850 m altitude. Each puppy is carefully socialized, trained, and raised with personal attention",
+      icon: "🌲"
     },
     {
       title: "Lifetime Support",
-      description: "We provide ongoing support and guidance throughout your dog's lifetime",
+      description: "We provide lifelong guidance to every owner — from nutrition and training to health care. Truffles Macedonia believes in lasting partnerships and transparent communication",
       icon: "🤝"
     }
   ];
@@ -59,9 +59,7 @@ export function AboutFarm() {
         >
           <h2 className="text-3xl md:text-4xl mb-6">About Truffles Macedonia</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Located in the beautiful countryside of North Macedonia, our family-owned breeding program is dedicated to 
-            preserving the authentic Lagotto Romagnolo breed while producing healthy, well-socialized companions for families worldwide.
-          </p>
+          Our dogs and puppies do not live in cages or boxes but freely in a 1,000-square-meter forest area with individual rooms for rest and comfort.          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
@@ -77,9 +75,9 @@ export function AboutFarm() {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1523800503107-5bc3ba2a6f81?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Beautiful countryside farm setting with Lagotto Romagnolo dogs"
-                className="w-full h-80 object-cover rounded-lg shadow-lg"
+              src="/dog7.jpeg"
+              alt="Beautiful countryside farm setting with Lagotto Romagnolo dogs"
+              className="w-full h-80 object-cover rounded-lg shadow-lg"
               />
             </motion.div>
           </motion.div>
@@ -89,38 +87,9 @@ export function AboutFarm() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <h3 className="text-2xl mb-6">Our Commitment to Excellence</h3>
-            <div className="space-y-6">
-              <motion.p 
-                className="text-muted-foreground leading-relaxed"
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.5 }}
-              >
-                At Truffles Macedonia, we believe that breeding exceptional Lagotto Romagnolo dogs goes beyond genetics. 
-                Our dogs live as part of our family, ensuring they develop the stable temperament and social skills that 
-                make them perfect companions.
-              </motion.p>
-              <motion.p 
-                className="text-muted-foreground leading-relaxed"
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.6 }}
-              >
-                Each puppy is carefully raised with love, proper nutrition, veterinary care, and early training. 
-                We work closely with international breed clubs to maintain the highest standards and preserve the 
-                working heritage of this remarkable breed.
-              </motion.p>
-              <motion.p 
-                className="text-muted-foreground leading-relaxed"
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.7 }}
-              >
-                Our breeding program focuses on health, temperament, and conformation, with many of our dogs 
-                achieving championship titles and working certifications in truffle hunting.
-              </motion.p>
-            </div>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">Located at 850 meters above sea level, our mountain setting ensures a peaceful, healthy environment that promotes natural development and excellent physical condition.          
+            </p>
+          
           </motion.div>
         </div>
 
@@ -143,8 +112,8 @@ export function AboutFarm() {
                 transition: { type: "spring", stiffness: 400 }
               }}
             >
-              <Card className="p-6 text-center hover:shadow-lg transition-shadow">
-                <CardContent className="p-0">
+<Card className="p-6 text-center hover:shadow-lg transition-shadow h-full flex flex-col justify-between">
+<CardContent className="p-0">
                   <motion.div 
                     className="text-4xl mb-4"
                     whileHover={{ scale: 1.2, rotate: 10 }}

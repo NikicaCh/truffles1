@@ -3,12 +3,28 @@ import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
+import logo from "../public/logotto.webp";
 
-import logo from "../public/logo.jpeg";
+/* Tiny config */
+const TITLE_COLOR_HEX = "#B8860B";
+const ANIM = "motion-safe:animate-fade-in-up";
+const NAV_LINKS = [
+  { id: "home", label: "Home" },
+  { id: "breed", label: "About Breed" },
+  { id: "farm", label: "Our Farm" },
+  { id: "puppies", label: "Available Puppies" },
+  { id: "dogs", label: "Our Dogs" },
+  { id: "gallery", label: "Gallery" },
+  { id: "testimonials", label: "Testimonials" },
+  { id: "faq", label: "FAQ" },
+  { id: "contact", label: "Contact" },
+] as const;
+
+type Route = "home" | "dog-profile";
 
 interface NavigationProps {
-  currentRoute: 'home' | 'dog-profile';
-  onNavigate: (route: 'home' | 'dog-profile') => void;
+  currentRoute: Route;
+  onNavigate: (route: Route) => void;
 }
 
 export function Navigation({ currentRoute, onNavigate }: NavigationProps) {
@@ -16,116 +32,126 @@ export function Navigation({ currentRoute, onNavigate }: NavigationProps) {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const onScroll = () => setIsScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    // If we're not on the home page, navigate there first
-    if (currentRoute !== 'home') {
-      onNavigate('home');
-      // Wait a bit for the page to load, then scroll
-      setTimeout(() => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
-    } else {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
+  // Smooth scroll with header offset
+  function scrollToSection(id: string) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const offset = window.innerWidth < 768 ? 100 : 128;
+    const y = el.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top: y, behavior: "smooth" });
     setIsMenuOpen(false);
-  };
+  }
 
-  const handleHomeClick = () => {
-    if (currentRoute === 'home') {
-      scrollToSection('home');
-    } else {
-      onNavigate('home');
-    }
-  };
+  function handleHome() {
+    if (currentRoute === "home") scrollToSection("home");
+    else onNavigate("home");
+  }
 
-  const navLinks = [
-    { id: 'home', label: 'Home' },
-    { id: 'breed', label: 'About Breed' },
-    { id: 'farm', label: 'Our Farm' },
-    { id: 'puppies', label: 'Available Puppies' },
-    { id: 'gallery', label: 'Gallery' },
-    { id: 'testimonials', label: 'Testimonials' },
-    { id: 'faq', label: 'FAQ' },
-    { id: 'contact', label: 'Contact' }
-  ];
+  function handleNavClick(id: string) {
+    id === "home" ? handleHome() : scrollToSection(id);
+  }
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-background/95 backdrop-blur-sm shadow-md' : 'bg-transparent'
-    }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center">
-            <button onClick={handleHomeClick} className="flex items-center space-x-2">
-              <Image src={logo} alt="Truffles Macedonia logo" width={120} height={120} priority />
-              <span className="sr-only">Truffles Macedonia</span>
-            </button>
+    <nav
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        isScrolled ? "bg-white shadow-md" : "bg-white"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-2 lg:px-8">
+        {/* ===== MOBILE HEADER ===== */}
+        <div className="md:hidden relative flex items-center justify-between h-auto py-3">
+          {/* Left: Logo (square-ish) */}
+          <div className="absolute left-0 flex items-center">
+
+          <div className={`relative h-[100px] w-[60px] overflow-visible ${ANIM} [animation-delay:100ms]`}>
+                <Image
+                  src={logo}
+                  alt="Truffles Macedonia logo"
+                  fill
+                  priority
+                  sizes="60px"
+                  className="object-contain transition-transform duration-300 ease-out group-hover:scale-110 origin-left will-change-transform"
+                />
+            
+          </div>
+            
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
-              {navLinks.map((link) => (
-                <button
-                  key={link.id}
-                  onClick={() => {
-                    if (link.id === 'home') {
-                      handleHomeClick();
-                    } else {
-                      scrollToSection(link.id);
-                    }
-                  }}
-                  className="text-foreground hover:text-primary px-3 py-2 rounded-md transition-colors"
-                >
-                  {link.label}
-                </button>
-              ))}
-            </div>
+          {/* Center: Title (h1, two lines, animated) */}
+          <div className="flex-1 text-center px-2 ml-10 mt-4">
+            <h1
+              onClick={handleHome}
+              role="button"
+              aria-label="Go to home"
+              title="Truffles Macedonia – Premium Lagotto Romagnolo"
+              className={`font-semibold text-xl sm:text-2xl leading-snug tracking-tight whitespace-normal break-words md:animate-none ${ANIM} [animation-delay:180ms]`}
+              style={{ color: TITLE_COLOR_HEX, lineHeight: 1.15, wordBreak: "keep-all" }}
+            >
+              Truffles Macedonia – Premium
+              <br />
+              Lagotto Romagnolo
+            </h1>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          {/* Right: Hamburger */}
+          <div className="absolute right-0 flex items-center">
             <Button
               variant="ghost"
               size="sm"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+              aria-expanded={isMenuOpen}
+              onClick={() => setIsMenuOpen((s) => !s)}
             >
               {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
           </div>
         </div>
 
-        {/* Mobile Navigation Menu */}
+        {/* ===== DESKTOP HEADER ===== */}
+        <div className="hidden md:flex items-center justify-between h-36">
+          {/* Left: Logo (set width/height to control aspect) */}
+              <div className={`relative h-[100px] w-[220px] overflow-visible ${ANIM} [animation-delay:100ms]`}>
+                <Image
+                  src={logo}
+                  alt="Truffles Macedonia logo"
+                  fill
+                  priority
+                  sizes="180px"
+                  className="object-contain transition-transform duration-300 ease-out group-hover:scale-110 origin-left will-change-transform"
+                />
+            
+          </div>
+
+          {/* Right: Links (animated as a group) */}
+          <div className={`flex items-center space-x-6 ${ANIM} [animation-delay:200ms]`}>
+            {NAV_LINKS.map((l) => (
+              <button
+                key={l.id}
+                onClick={() => handleNavClick(l.id)}
+                className="text-foreground hover:text-primary px-2 py-2 rounded-md transition-colors whitespace-nowrap"
+              >
+                {l.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* ===== MOBILE MENU ===== */}
         {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background/95 backdrop-blur-sm rounded-lg mt-2">
-              {navLinks.map((link) => (
+          <div className={`md:hidden mt-2 ${ANIM} [animation-delay:100ms]`}>
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-white rounded-lg">
+              {NAV_LINKS.map((l) => (
                 <button
-                  key={link.id}
-                  onClick={() => {
-                    if (link.id === 'home') {
-                      handleHomeClick();
-                    } else {
-                      scrollToSection(link.id);
-                    }
-                  }}
+                  key={l.id}
+                  onClick={() => handleNavClick(l.id)}
                   className="text-foreground hover:text-primary block px-3 py-2 rounded-md w-full text-left transition-colors"
                 >
-                  {link.label}
+                  {l.label}
                 </button>
               ))}
             </div>

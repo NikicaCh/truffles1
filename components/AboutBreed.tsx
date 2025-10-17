@@ -20,32 +20,32 @@ export function AboutBreed() {
     {
       title: "Intelligence",
       description: "Highly intelligent and trainable with excellent problem-solving abilities",
-      icon: "🧠"
+      // icon: "🧠"
     },
     {
       title: "Hypoallergenic",
       description: "Non-shedding, curly coat perfect for families with allergies",
-      icon: "🌟"
+      // icon: "🌟"
     },
     {
       title: "Active & Energetic",
       description: "Loves outdoor activities, swimming, and mental stimulation",
-      icon: "⚡"
+      // icon: "⚡"
     },
     {
       title: "Family Friendly",
       description: "Gentle with children and excellent family companions",
-      icon: "👨‍👩‍👧‍👦"
+      // icon: "👨‍👩‍👧‍👦"
     },
     {
       title: "Natural Hunters",
       description: "Born truffle hunters with exceptional scenting abilities",
-      icon: "🔍"
+      // icon: "🔍"
     },
     {
       title: "Loyal & Devoted",
       description: "Forms strong bonds with their family and are naturally protective",
-      icon: "💝"
+      // icon: "💝"
     }
   ];
 
@@ -70,9 +70,10 @@ export function AboutBreed() {
         >
           <h2 className="text-3xl md:text-4xl mb-6">About the Lagotto Romagnolo</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            The Lagotto Romagnolo is an ancient Italian breed, originally developed as a water retriever in the wetlands of Romagna. 
-            Today, they are the world's only breed specifically bred for truffle hunting, combining exceptional scenting ability with intelligence and loyalty.
+          The Lagotto Romagnolo is an intelligent, affectionate, and versatile breed known for its exceptional truffle-hunting ability.
           </p>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          At Truffles Macedonia, we’ve dedicated over ten years to preserving the breed’s finest traits — health, character, and instinct.          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
@@ -81,7 +82,7 @@ export function AboutBreed() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h3 className="text-2xl mb-6">Breed Characteristics</h3>
+            <h3 className="text-2xl mb-6">    Breed Characteristics</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {breedTraits.map((trait, index) => (
                 <motion.div
@@ -99,7 +100,7 @@ export function AboutBreed() {
                           whileHover={{ scale: 1.2, rotate: 10 }}
                           transition={{ type: "spring", stiffness: 400 }}
                         >
-                          {trait.icon}
+                          {/* {trait.icon} */}
                         </motion.span>
                         <div>
                           <h4 className="mb-1">{trait.title}</h4>
@@ -125,9 +126,10 @@ export function AboutBreed() {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1544568100-847a948585b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Lagotto Romagnolo dog portrait showing characteristic curly coat"
-                className="w-full h-80 object-cover rounded-lg shadow-lg"
+              src="/dog17.jpeg"
+                 alt="Lagotto Romagnolo dog portrait showing characteristic curly coat"
+                className="w-full h-80 object-cover rounded-lg shadow-lg mt-40"
+
               />
             </motion.div>
           </motion.div>
@@ -140,10 +142,14 @@ export function AboutBreed() {
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           {[
-            { title: "Size", subtitle: "Medium-sized breed", details: ["Males: 17-19 inches", "Females: 16-18 inches"] },
-            { title: "Lifespan", subtitle: "Healthy & Long-lived", details: ["14-16 years typical", "With proper care"] },
-            { title: "Exercise Needs", subtitle: "Moderate to High", details: ["1-2 hours daily", "Mental stimulation essential"] }
+            { title: "Size", subtitle: "Medium-sized breed", details: ["Males: 43–48 cm", "Females: 41–46 cm" , "Weight: 11–16 kg"] },
+            { title: "Lifespan", subtitle: "Healthy & Long-lived", details: ["Typically 14–17 years" , "Often exceeds 15 years with proper care"] },
+            { title: "Exercise Needs", subtitle: "Moderate to High", details: ["Requires 45–60 minutes of daily exercise" ,
+" Enjoys scent work, training, and mental challenges"] }
           ].map((item, index) => (
+
+
+
             <motion.div
               key={index}
               whileHover={{ y: -5, scale: 1.02 }}
