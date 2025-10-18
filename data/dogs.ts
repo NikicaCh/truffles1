@@ -6,7 +6,7 @@ export interface Dog {
   age: string;
   color: string;
   weight: string;
-  status: 'Available' | 'Reserved' | 'Sold';
+  status: 'Available' | 'Reserved' | 'Sold' | 'OurDog';
   price: string;
   parents: {
     sire: string;
@@ -201,14 +201,14 @@ export const availableDogs: Dog[] = [
 export const ourDogs : Dog[] = [
 
   {
-    id: "luna-spring-2024",
+    id: "luna",
     name: "Luna",
     gender: "Female",
     birthDate: "March 15, 2024",
     age: "4 months old",
     color: "Rich Brown with White Markings",
     weight: "8.5 kg",
-    status: "Available",
+    status: "OurDog",
     price: "€1,400",
     parents: {
       sire: "Champion Romeo della Truffle",
@@ -242,14 +242,14 @@ export const ourDogs : Dog[] = [
     ]
   },
   {
-    id: "bruno-spring-2024",
+    id: "Kali",
     name: "Bruno",
     gender: "Male",
     birthDate: "March 15, 2024",
     age: "4 months old",
     color: "Orange Roan",
     weight: "9.2 kg",
-    status: "Available",
+    status: "OurDog",
     price: "€1,350",
     parents: {
       sire: "Champion Romeo della Truffle",
@@ -264,9 +264,15 @@ export const ourDogs : Dog[] = [
       healthGuarantee: true
     },
     images: [
-      "/dog2.jpeg",
-"/dog2.jpeg",
-"/dog2.jpeg"    ],
+      "/Kali/kali.jpeg",
+      "/Kali/kalii.jpeg",
+      "/Kali/kali (1).jpeg", 
+      "/Kali/kali (2).jpeg", 
+      "/Kali/kali (3).jpeg",   
+      "/Kali/kali (4).jpeg" ,  
+      "/Kali/kali (5).jpeg"   
+
+ ],
 
     features: [
       "Excellent conformation",
@@ -291,7 +297,7 @@ export const ourDogs : Dog[] = [
     age: "4 months old",
     color: "White with Brown Patches",
     weight: "7.8 kg",
-    status: "Available",
+    status: "OurDog",
     price: "€1,300",
     parents: {
       sire: "Champion Romeo della Truffle",
@@ -334,7 +340,7 @@ export const ourDogs : Dog[] = [
     age: "Available for reservation",
     color: "Brown",
     weight: "To be determined",
-    status: "Reserved",
+    status: "OurDog",
     price: "€1,500",
     parents: {
       sire: "Champion Bruno di Truffle",
@@ -385,3 +391,8 @@ export const getReservedDogs = (): Dog[] => {
 export const getDogByIdd = (id: string): Dog | undefined => {
   return ourDogs.find(dog => dog.id === id);
 };
+
+export const getourDogs = (): Dog[] => {
+  return ourDogs;
+};
+

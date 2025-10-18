@@ -72,6 +72,16 @@ export function Footer() {
                   Available Puppies
                 </button>
               </li>
+
+              <li>
+                <button 
+                  onClick={() => scrollToSection('dogs')}
+                  className="hover:text-primary-foreground transition-colors"
+                >
+                  Our Dogs
+                </button>
+              </li>
+
               <li>
                 <button 
                   onClick={() => scrollToSection('gallery')}
@@ -106,7 +116,7 @@ export function Footer() {
                 <Phone className="h-4 w-4 mt-1" />
                 <div>
                   <p>+389 70 123 456</p>
-                  <p className="text-xs">WhatsApp available</p>
+                  <p className="text-xs">WhatsApp and Viber available</p>
                 </div>
               </div>
               <div className="flex items-start space-x-2">
@@ -128,11 +138,6 @@ export function Footer() {
             <p>&copy; 2024 Truffles Macedonia. All rights reserved.</p>
           </div>
 
-          <div className="flex items-center space-x-4 text-sm text-primary-foreground/80">
-            <span>Made with</span>
-            <Heart className="h-4 w-4 text-red-400 fill-current" />
-            <span>for Lagotto Romagnolo lovers</span>
-          </div>
         </div>
 
         {/* SEO Schema Markup Info */}
