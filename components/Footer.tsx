@@ -75,7 +75,7 @@ export function Footer() {
 
               <li>
                 <button 
-                  onClick={() => scrollToSection('dogs')}
+                  onClick={() => scrollToSection('our-dogs')}
                   className="hover:text-primary-foreground transition-colors"
                 >
                   Our Dogs

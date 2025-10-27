@@ -1,6 +1,6 @@
 "use client";
 import { useRef, useEffect, useState, MouseEvent } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
@@ -11,9 +11,7 @@ import {
   Calendar,
   Weight,
   Heart,
-  Shield,
   Award,
-  Users,
   X,
   ChevronLeft,
   ChevronRight,
@@ -30,10 +28,14 @@ export function DogProfile({ dog, onBack }: DogProfileProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const router = useRouter();
+  const params = useSearchParams();
+
+  // Determine where to send the user back (default to Available)
+  const from = params.get("from"); // "available" | "our" | null
+  const backHash = from === "our" ? "#our-dogs" : "#puppies";
 
   // For-sale vs. owned
   const isAvailableDog = dog.status === "Available" || dog.status === "Reserved";
-  
 
   // -------- Image Modal State --------
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -91,14 +93,24 @@ export function DogProfile({ dog, onBack }: DogProfileProps) {
     else nextImage();
   };
 
+  // -------- Show More state for thumbnails --------
+  const [showAllImages, setShowAllImages] = useState(false);
+
+  // Count of photos not fully shown initially (beyond the first visible thumbnail)
+  const hiddenCount = Math.max(0, dog.images.length - 2); // we fully show index 0 (main) + index 1 (thumb)
+
   return (
     <div ref={ref} className="min-h-screen bg-background pt-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Back Button */}
-        <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           <Button
             variant="ghost"
-            onClick={() => (onBack ? onBack() : router.push("/"))}
+            onClick={() => (onBack ? onBack() : router.push(`/${backHash}`))}
             className="mb-8 hover:bg-muted/50"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
@@ -114,6 +126,7 @@ export function DogProfile({ dog, onBack }: DogProfileProps) {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
+            {/* Main image (index 0) */}
             <motion.div
               className="relative cursor-zoom-in"
               whileHover={{ scale: 1.02 }}
@@ -140,23 +153,71 @@ export function DogProfile({ dog, onBack }: DogProfileProps) {
               )}
             </motion.div>
 
+            {/* Thumbnails */}
             {dog.images.length > 1 && (
               <div className="grid grid-cols-2 gap-4">
-                {dog.images.slice(1).map((image, index) => (
+                {/* Second image (index 1) – normal clickable thumbnail */}
+                {dog.images[1] && (
                   <motion.div
-                    key={image + index}
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: "spring", stiffness: 400 }}
                     className="cursor-zoom-in"
-                    onClick={() => openImage(index + 1)}
+                    onClick={() => {
+                      
+                      openImage(1)}}
                   >
                     <ImageWithFallback
-                      src={image}
-                      alt={`${dog.name} - Photo ${index + 2}`}
+                      src={dog.images[1]}
+                      alt={`${dog.name} - Photo 2`}
                       className="w-full h-32 object-cover rounded-lg shadow-md"
                     />
                   </motion.div>
-                ))}
+                )}
+
+                {/* Third tile – blurred with "Show more" overlay (only when not expanded and there are more images) */}
+                {!showAllImages && dog.images[2] && (
+                  <div className="relative h-32 rounded-lg overflow-hidden">
+                    <ImageWithFallback
+                      src={dog.images[2]}
+                      alt={`${dog.name} - Hidden preview`}
+                      className="w-full h-full object-cover scale-105 filter blur-sm brightness-75"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => {
+                        openImage(2)
+                        //setShowAllImages(true)
+                        }
+                      }
+                      className="absolute inset-0 flex flex-col items-center justify-center text-white font-medium bg-black/40 hover:bg-black/50 transition-colors"
+                    >
+                      <span className="text-sm">Show more</span>
+                      <span className="text-xs opacity-90">
+                        +{hiddenCount} photo{hiddenCount === 1 ? "" : "s"}
+                      </span>
+                    </button>
+                  </div>
+                )}
+
+                {/* Expanded mode – show all remaining images starting from index 2 */}
+                {showAllImages &&
+                  dog.images.slice(2).map((image, idx) => (
+                    <motion.div
+                      key={`${image}-${idx}`}
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ type: "spring", stiffness: 400 }}
+                      className="cursor-zoom-in"
+                      onClick={() => {
+
+                        openImage(idx + 2)}}
+                    >
+                      <ImageWithFallback
+                        src={image}
+                        alt={`${dog.name} - Photo ${idx + 3}`}
+                        className="w-full h-32 object-cover rounded-lg shadow-md"
+                      />
+                    </motion.div>
+                  ))}
               </div>
             )}
           </motion.div>
@@ -169,13 +230,19 @@ export function DogProfile({ dog, onBack }: DogProfileProps) {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <div>
-              <motion.h1 className="text-4xl mb-2 text-foreground">{dog.name}</motion.h1>
+              <motion.h1 className="text-4xl mb-2 text-foreground">
+                {dog.name}
+              </motion.h1>
               <p className="text-xl text-muted-foreground mb-4">
                 {dog.gender} • {dog.color}
               </p>
 
               {/* Price only for available/reserved */}
-              {isAvailableDog && <motion.div className="text-2xl text-primary mb-6">{dog.price}</motion.div>}
+              {isAvailableDog && (
+                <motion.div className="text-2xl text-primary mb-6">
+                  {dog.price}
+                </motion.div>
+              )}
             </div>
 
             {/* Info Cards */}
@@ -190,7 +257,9 @@ export function DogProfile({ dog, onBack }: DogProfileProps) {
                   <CardContent className="p-0 flex items-center space-x-3">
                     <item.icon className="h-5 w-5 text-primary" />
                     <div>
-                      <p className="text-sm text-muted-foreground">{item.label}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {item.label}
+                      </p>
                       <p className="font-medium">{item.value}</p>
                     </div>
                   </CardContent>
@@ -231,7 +300,9 @@ export function DogProfile({ dog, onBack }: DogProfileProps) {
               <CardTitle>About {dog.name}</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground leading-relaxed">{dog.description}</p>
+              <p className="text-muted-foreground leading-relaxed">
+                {dog.description}
+              </p>
             </CardContent>
           </Card>
 
@@ -316,17 +387,19 @@ export function DogProfile({ dog, onBack }: DogProfileProps) {
 
       {/* -------- Fullscreen Image Viewer -------- */}
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-        <DialogContent className="max-w-5xl w-full p-0 bg-black/90 border-0">
+        <DialogContent 
+        
+        className="max-w-5xl w-full p-0 bg-black/90 border-0">
           <div className="relative">
             {/* Close button */}
-            <Button
+            {/* <Button
               variant="ghost"
               size="sm"
               className="absolute top-3 right-3 bg-black/50 text-white hover:bg-black/70 z-10"
               onClick={closeImage}
             >
               <X className="h-5 w-5" />
-            </Button>
+            </Button> */}
 
             {/* Prev / Next buttons */}
             <Button

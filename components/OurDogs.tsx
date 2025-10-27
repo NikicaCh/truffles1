@@ -1,6 +1,7 @@
+// OurDogs.tsx
 "use client";
 import { useRef } from "react";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
@@ -23,25 +24,17 @@ export function OurDogs() {
 
   const ourDogsData = getourDogs();
 
+  const router = useRouter();
+  const openDog = (id: string) => router.push(`/dog/${id}?from=our`);
+
   return (
-    <section id="dogs" ref={ref} className="py-20 bg-muted/30 relative overflow-hidden">
-      {/* Background Parallax Elements */}
-      <motion.div
-        className="absolute top-10 right-10 w-32 h-32 bg-primary/5 rounded-full blur-2xl"
-        style={{ y: backgroundY }}
-      />
-      <motion.div
-        className="absolute bottom-20 left-10 w-24 h-24 bg-yellow-400/10 rounded-full blur-xl"
-        style={{ y: floatingY }}
-      />
+    <section id="our-dogs" ref={ref} className="py-20 bg-muted/30 relative overflow-hidden">
+      {/* Background Parallax */}
+      <motion.div className="absolute top-10 right-10 w-32 h-32 bg-primary/5 rounded-full blur-2xl" style={{ y: backgroundY }} />
+      <motion.div className="absolute bottom-20 left-10 w-24 h-24 bg-yellow-400/10 rounded-full blur-xl" style={{ y: floatingY }} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-        >
+        <motion.div className="text-center mb-16" initial={{ opacity: 0, y: 50 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }}>
           <h2 className="text-3xl md:text-4xl mb-6">Our Dogs</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             All our dogs hold Champion, Interchampion, and International Champion titles, confirming their top quality and breeding potential.
@@ -61,22 +54,27 @@ export function OurDogs() {
                   transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
                   whileHover={{ y: -5, scale: 1.02 }}
                 >
-                  <Card className="overflow-hidden hover:shadow-lg transition-all duration-300">
+                  <Card
+                    className="overflow-hidden hover:shadow-lg transition-all duration-300 cursor-pointer"
+                    role="link"
+                    tabIndex={0}
+                    onClick={() => openDog(dog.id)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") openDog(dog.id);
+                    }}
+                  >
                     <div className="relative">
                       <ImageWithFallback
                         src={dog.images[0]}
                         alt={`${dog.name} - ${dog.gender} Lagotto Romagnolo`}
                         className="w-full h-64 object-cover"
                       />
-                      {dog.status && dog.status !== "Available" && (
-                        <Badge className="absolute top-4 right-4 bg-purple-500">{dog.status}</Badge>
-                      )}
                     </div>
 
                     <CardHeader>
                       <CardTitle className="flex items-center justify-between">
                         <div>
-                          <span className="text-xl">{dog.name}</span>
+                          <span className="text-xl hover:underline">{dog.name}</span>
                           <p className="text-sm text-muted-foreground font-normal">
                             {dog.gender} • {dog.age}
                           </p>
@@ -114,12 +112,16 @@ export function OurDogs() {
                       </div>
 
                       <div className="space-y-2">
-                        <Link href={`/our-dog/${dog.id}`}>
-                          <Button className="w-full">
-                            <Eye className="h-4 w-4 mr-2" />
-                            View Full Profile
-                          </Button>
-                        </Link>
+                        <Button
+                          className="w-full"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            openDog(dog.id);
+                          }}
+                        >
+                          <Eye className="h-4 w-4 mr-2" />
+                          View Full Profile
+                        </Button>
                       </div>
                     </CardContent>
                   </Card>
