@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { availableDogs, getDogById } from '../data/dogs';
 import { DogProfile } from './DogProfile';
 import { Hero } from './Hero';
@@ -25,7 +25,11 @@ export function Router({ currentRoute, dogId, onNavigate }: RouterProps) {
       if (dogId) {
         const dog = getDogById(dogId);
         if (dog) {
-          return <DogProfile dog={dog} onBack={() => onNavigate('home')} />;
+          return (
+            <Suspense fallback={<div>Loading...</div>}>
+              <DogProfile dog={dog} onBack={() => onNavigate('home')} />
+            </Suspense>
+          );
         }
       }
       // If dog not found, redirect to home

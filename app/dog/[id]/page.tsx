@@ -3,6 +3,9 @@ import { notFound } from "next/navigation";
 import { availableDogs, ourDogs } from "@/data/dogs";
 import { DogProfile } from "@/components/DogProfile";
 
+import { Suspense } from "react";
+
+
 type Props = { params: { id: string } };
 
 // 🔹 Combine both sets for static generation
@@ -58,7 +61,9 @@ export default function DogPage({ params }: Props) {
 
   return (
     <div className="min-h-screen bg-background">
-      <DogProfile dog={dog} />
+      <Suspense fallback={<div>Loading...</div>}>
+        <DogProfile dog={dog} />
+      </Suspense>
     </div>
   );
 }
