@@ -71,7 +71,7 @@ export function Hero() {
 
   // Auto-advance images for better engagement
   useEffect(() => {
-    const interval = setInterval(nextImage, 5000);
+    const interval = setInterval(nextImage, 15000);
     return () => clearInterval(interval);
   }, []);
 

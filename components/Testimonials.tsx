@@ -40,30 +40,30 @@ export function Testimonials() {
       dogName: "Stella",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
     },
-    {
-      name: "Hans & Greta Müller",
-      location: "Munich, Germany",
-      rating: 5,
-      text: "Bruno is now 3 years old and continues to amaze us every day. His intelligence and loyalty are remarkable. The health guarantee and ongoing support from Truffles Macedonia shows their commitment to their dogs' wellbeing.",
-      dogName: "Bruno",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
-    },
-    {
-      name: "Maria & Carlos Rodriguez",
-      location: "Barcelona, Spain",
-      rating: 5,
-      text: "Our Bella is the most gentle and loving dog with our children. Despite being a working breed, she adapts perfectly to family life. The early socialization program at Truffles Macedonia really shows in her confident, friendly nature.",
-      dogName: "Bella",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
-    },
-    {
-      name: "Jean & Pierre Dubois",
-      location: "Lyon, France",
-      rating: 5,
-      text: "As professional dog trainers, we appreciate the excellent foundation these puppies receive. Maximus came to us with basic training already started and was eager to learn. The breeding program focuses on intelligence and trainability.",
-      dogName: "Maximus",
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
-    }
+    // {
+    //   name: "Hans & Greta Müller",
+    //   location: "Munich, Germany",
+    //   rating: 5,
+    //   text: "Bruno is now 3 years old and continues to amaze us every day. His intelligence and loyalty are remarkable. The health guarantee and ongoing support from Truffles Macedonia shows their commitment to their dogs' wellbeing.",
+    //   dogName: "Bruno",
+    //   image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+    // },
+    // {
+    //   name: "Maria & Carlos Rodriguez",
+    //   location: "Barcelona, Spain",
+    //   rating: 5,
+    //   text: "Our Bella is the most gentle and loving dog with our children. Despite being a working breed, she adapts perfectly to family life. The early socialization program at Truffles Macedonia really shows in her confident, friendly nature.",
+    //   dogName: "Bella",
+    //   image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+    // },
+    // {
+    //   name: "Jean & Pierre Dubois",
+    //   location: "Lyon, France",
+    //   rating: 5,
+    //   text: "As professional dog trainers, we appreciate the excellent foundation these puppies receive. Maximus came to us with basic training already started and was eager to learn. The breeding program focuses on intelligence and trainability.",
+    //   dogName: "Maximus",
+    //   image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+    // }
   ];
 
   const renderStars = (rating: number) => {
@@ -104,8 +104,7 @@ export function Testimonials() {
         >
           <h2 className="text-3xl md:text-4xl mb-6">Happy Families</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Don't just take our word for it - hear from the families who have welcomed our Lagotto Romagnolo 
-            puppies into their homes and hearts.
+          We maintain warm and friendly relationships with every owner and believe in long-term cooperation and transparent communication.
           </p>
         </motion.div>
 

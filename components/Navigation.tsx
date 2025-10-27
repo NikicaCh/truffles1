@@ -13,7 +13,7 @@ const NAV_LINKS = [
   { id: "breed", label: "About Breed" },
   { id: "farm", label: "Our Farm" },
   { id: "puppies", label: "Available Puppies" },
-  { id: "dogs", label: "Our Dogs" },
+  { id: "our-dogs", label: "Our Dogs" },
   { id: "gallery", label: "Gallery" },
   { id: "testimonials", label: "Testimonials" },
   { id: "faq", label: "FAQ" },

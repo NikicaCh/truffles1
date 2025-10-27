@@ -75,7 +75,7 @@ export function AboutFarm() {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <ImageWithFallback
-              src="/dog7.jpeg"
+              src="/dog10.jpeg"
               alt="Beautiful countryside farm setting with Lagotto Romagnolo dogs"
               className="w-full h-80 object-cover rounded-lg shadow-lg"
               />
