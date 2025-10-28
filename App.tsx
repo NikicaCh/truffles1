@@ -3,7 +3,6 @@ import { Footer } from "./components/Footer";
 import { Router, useRouter } from "./components/Router";
 import { SEOHead } from "./components/SEOHead";
 import { Breadcrumbs } from "./components/Breadcrumbs";
-import { Sitemap } from "./components/Sitemap";
 import { availableDogs } from "./data/dogs";
 
 export default function App() {
@@ -64,7 +63,6 @@ export default function App() {
     <div className="min-h-screen bg-background">
       {/* SEO Components */}
       <SEOHead {...seoData} />
-      <Sitemap />
 
       <Navigation currentRoute={currentRoute} onNavigate={navigate} />
       
