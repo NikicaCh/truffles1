@@ -31,7 +31,14 @@ export function Footer() {
               </div>
               <div className="flex items-center space-x-1">
                 <Phone className="h-4 w-4" />
-                <span>+389 70 123 456</span>
+                <a
+                  href="https://wa.me/38970377000"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary-foreground transition-colors"
+                >
+                  +389 70 377 000
+                </a>
               </div>
             </div>
           </div>
@@ -115,7 +122,14 @@ export function Footer() {
               <div className="flex items-start space-x-2">
                 <Phone className="h-4 w-4 mt-1" />
                 <div>
-                  <p>+389 70 123 456</p>
+                  <a
+                    href="https://wa.me/38970377000"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary-foreground transition-colors"
+                  >
+                    +389 70 377 000
+                  </a>
                   <p className="text-xs">WhatsApp and Viber available</p>
                 </div>
               </div>

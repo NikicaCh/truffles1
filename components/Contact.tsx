@@ -6,9 +6,17 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Label } from "./ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, LucideIcon } from "lucide-react";
 import { toast } from "sonner";
 import { motion, useScroll, useTransform, useInView } from "motion/react";
+
+interface ContactItem {
+  icon: LucideIcon;
+  title: string;
+  main: string;
+  sub: string;
+  link?: string;
+}
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -34,7 +42,10 @@ export function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Thank you for your inquiry! We'll contact you within 24 hours.");
+    toast.success("Thank you for your inquiry!", {
+      description: "We'll contact you within 24 hours. We look forward to connecting with you!",
+      duration: 5000,
+    });
     setFormData({
       name: "",
       email: "",
@@ -103,8 +114,9 @@ export function Contact() {
                   {
                     icon: Phone,
                     title: "Phone",
-                    main: "+389 70 xxx",
+                    main: "+389 70 377 000",
                     sub: "WhatsApp and Viber available",
+                    link: "https://wa.me/38970377000",
                   },
                   {
                     icon: Mail,
@@ -118,7 +130,7 @@ export function Contact() {
                     main: "Open 24/7 (CET)",
                     sub: "Emergency contact available for puppy parents",
                   },
-                ].map((item, index) => (
+                ].map((item: ContactItem, index) => (
                   <motion.div
                     key={index}
                     className="flex items-start space-x-3"
@@ -132,58 +144,24 @@ export function Contact() {
                     </motion.div>
                     <div>
                       <p className="font-medium">{item.title}</p>
-                      <p className="text-muted-foreground">{item.main}</p>
+                      {item.link ? (
+                        <a
+                          href={item.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-muted-foreground hover:text-primary transition-colors"
+                        >
+                          {item.main}
+                        </a>
+                      ) : (
+                        <p className="text-muted-foreground">{item.main}</p>
+                      )}
                       <p className="text-sm text-muted-foreground mt-1">{item.sub}</p>
                     </div>
                   </motion.div>
                 ))}
               </div>
             </div>
-
-            {/* FAQ */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.7 }}
-              whileHover={{ scale: 1.02 }}
-            >
-              <Card>
-                <CardHeader>
-                  <CardTitle>Frequently Asked Questions</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  {[
-                    {
-                      q: "What's the adoption process?",
-                      a: "Initial inquiry → Application → Phone/video interview → Deposit → Puppy selection → Final payment → Pickup/delivery",
-                    },
-                    {
-                      q: "Do you ship internationally?",
-                      a: "Yes! We arrange safe transport to most countries. All health certifications and export requirements are handled.",
-                    },
-                    {
-                      q: "What health testing do you do?",
-                      a: "All breeding dogs are tested for hips, elbows, eyes, and genetic disorders common to the breed.",
-                    },
-                    {
-                      q: "Can we visit the farm?",
-                      a: "Absolutely! We encourage visits by appointment. Virtual tours are also available for international clients.",
-                    },
-                  ].map((faq, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={isInView ? { opacity: 1, x: 0 } : {}}
-                      transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
-                      whileHover={{ x: 5 }}
-                    >
-                      <h5 className="font-medium mb-1">{faq.q}</h5>
-                      <p className="text-sm text-muted-foreground">{faq.a}</p>
-                    </motion.div>
-                  ))}
-                </CardContent>
-              </Card>
-            </motion.div>
           </motion.div>
 
           {/* Contact Form */}

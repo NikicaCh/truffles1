@@ -541,5 +541,10 @@ export const getourDogs = (): Dog[] => {
   return ourDogs;
 };
 
+// Configuration: Set to false to show "no available puppies" message
+// Set to true to show available puppies (if any exist)
+export const HAS_AVAILABLE_PUPPIES = false;
 
-
+// Configuration: Set to false to hide upcoming litters section
+// Set to true to show upcoming litters
+export const HAS_UPCOMING_LITTERS = true;

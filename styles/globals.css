@@ -163,3 +163,9 @@ html {
   }
 }
 
+/* Toast description text styling */
+[data-sonner-toast] [data-description] {
+  color: var(--muted-foreground) !important;
+  opacity: 0.9;
+}
+

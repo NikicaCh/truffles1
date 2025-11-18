@@ -41,16 +41,10 @@ export function Sitemap() {
           priority: '0.7'
         },
         {
-          loc: `${baseUrl}/#testimonials`,
+          loc: `${baseUrl}/#awards`,
           lastmod: currentDate,
           changefreq: 'monthly',
           priority: '0.7'
-        },
-        {
-          loc: `${baseUrl}/#faq`,
-          lastmod: currentDate,
-          changefreq: 'monthly',
-          priority: '0.8'
         },
         {
           loc: `${baseUrl}/#contact`,

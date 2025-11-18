@@ -15,8 +15,7 @@ const NAV_LINKS = [
   { id: "puppies", label: "Available Puppies" },
   { id: "our-dogs", label: "Our Dogs" },
   { id: "gallery", label: "Gallery" },
-  { id: "testimonials", label: "Testimonials" },
-  { id: "faq", label: "FAQ" },
+  { id: "awards", label: "Awards" },
   { id: "contact", label: "Contact" },
 ] as const;
 

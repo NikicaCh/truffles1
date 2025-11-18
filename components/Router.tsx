@@ -6,8 +6,7 @@ import { AboutBreed } from './AboutBreed';
 import { AboutFarm } from './AboutFarm';
 import { AvailablePuppies } from './AvailablePuppies';
 import { Gallery } from './Gallery';
-import { Testimonials } from './Testimonials';
-import { FAQ } from './FAQ';
+import { Awards } from './Awards';
 import { Contact } from './Contact';
 import { OurDogs } from './OurDogs';
 
@@ -46,8 +45,7 @@ export function Router({ currentRoute, dogId, onNavigate }: RouterProps) {
           <AvailablePuppies />
           <OurDogs />
           <Gallery />
-          <Testimonials />
-          <FAQ />
+          <Awards />
           <Contact />
         </main>
       );

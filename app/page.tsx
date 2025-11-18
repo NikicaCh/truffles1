@@ -7,8 +7,7 @@ import { AboutBreed } from "@/components/AboutBreed";
 import { AboutFarm } from "@/components/AboutFarm";
 import { AvailablePuppies } from "@/components/AvailablePuppies";
 import { Gallery } from "@/components/Gallery";
-import { Testimonials } from "@/components/Testimonials";
-import { FAQ } from "@/components/FAQ";
+import { Awards } from "@/components/Awards";
 import { Contact } from "@/components/Contact";
 import { useRouter } from "next/navigation";
 import { OurDogs } from "@/components/OurDogs";
@@ -25,8 +24,7 @@ export default function HomePage() {
         <AvailablePuppies />
         <OurDogs />
         <Gallery />
-        <Testimonials />
-        <FAQ />
+        <Awards />
         <Contact />
       </main>
       <Footer />
