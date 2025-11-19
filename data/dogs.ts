@@ -546,7 +546,6 @@ export const getourDogs = (): Dog[] => {
 export const HAS_AVAILABLE_PUPPIES = false;
 
 
-
 // Configuration: Set to false to hide upcoming litters section
 // Set to true to show upcoming litters
 export const HAS_UPCOMING_LITTERS = true;
