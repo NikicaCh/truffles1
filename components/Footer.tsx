@@ -146,7 +146,6 @@ export function Footer() {
 
         <Separator className="my-8 bg-primary-foreground/20" />
 
-        {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="text-primary-foreground/80 text-sm">
             <p>&copy; {new Date().getFullYear()} Truffles Macedonia. All rights reserved.</p>
