@@ -27,21 +27,24 @@ export function generateMetadata({ params }: Props): Metadata {
   if (!dog) return {};
 
   const isPuppy = availableDogs.some((d) => d.id === params.id);
-  const title = `${dog.name} - ${dog.gender} Lagotto Romagnolo ${
+  const displayName = dog.aka ? `${dog.name} aka ${dog.aka}` : dog.name;
+  const title = `${displayName} - ${dog.gender} Lagotto Romagnolo ${
     isPuppy ? "Puppy" : ""
   } | Truffles Macedonia`;
 
-  const description = isPuppy
-    ? `Meet ${dog.name}, a beautiful ${dog.gender.toLowerCase()} ${
+  let description = "";
+
+  if (isPuppy) {
+    const suitable = dog.suitableFor ? dog.suitableFor.join(", ") : "families and active individuals";
+    description = `Meet ${displayName}, a beautiful ${dog.gender.toLowerCase()} ${
         dog.color
-      } Lagotto Romagnolo puppy from champion bloodlines. ${dog.age}, health tested, perfect for ${dog.suitableFor.join(
-        ", "
-      )}.`
-    : `Discover ${dog.name}, our ${dog.gender.toLowerCase()} ${
+      } Lagotto Romagnolo puppy from champion bloodlines. ${dog.age}, health tested, perfect for ${suitable}.`;
+  } else {
+    const features = dog.features ? dog.features.join(", ") : "exceptional temperament and conformation";
+    description = `Discover ${displayName}, our ${dog.gender.toLowerCase()} ${
         dog.color
-      } Lagotto Romagnolo. ${dog.age}, health tested, ${dog.features.join(
-        ", "
-      )}.`;
+      } Lagotto Romagnolo. ${dog.age}, health tested, ${features}.`;
+  }
 
   const canonical = `https://trufflesmacedonia.com/dog/${params.id}`;
 

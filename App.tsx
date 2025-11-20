@@ -23,7 +23,6 @@ export default function App() {
         keywords: `${currentDog.name}, Lagotto Romagnolo puppy, ${currentDog.gender}, ${currentDog.color}, ${currentDog.age}, champion bloodlines, truffle hunting dog, hypoallergenic dog, Truffles Macedonia`,
         canonicalUrl: `https://trufflesmacedonia.com/dog/${dogId}`,
         dogName: currentDog.name,
-        dogPrice: currentDog.price
       };
     }
     

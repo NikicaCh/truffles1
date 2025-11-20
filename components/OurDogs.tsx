@@ -74,8 +74,15 @@ export function OurDogs() {
                     <CardHeader>
                       <CardTitle className="flex items-center justify-between">
                         <div>
-                          <span className="text-xl hover:underline">{dog.name}</span>
-                          <p className="text-sm text-muted-foreground font-normal">
+                          <span className="text-xl hover:underline">
+                            {dog.name}
+                            {dog.aka && (
+                              <span className="text-base text-muted-foreground font-normal ml-2">
+                                <span className="italic">aka</span> {dog.aka}
+                              </span>
+                            )}
+                          </span>
+                          <p className="text-sm text-muted-foreground font-normal mt-1">
                             {dog.gender} • {dog.age}
                           </p>
                         </div>
@@ -93,22 +100,6 @@ export function OurDogs() {
                       <div>
                         <p className="text-sm text-muted-foreground mb-2">Color: {dog.color}</p>
                         <p className="text-sm text-muted-foreground">Weight: {dog.weight}</p>
-                      </div>
-
-                      <div>
-                        <p className="text-sm mb-2">Personality:</p>
-                        <div className="flex flex-wrap gap-1">
-                          {dog.personality.slice(0, 3).map((trait, traitIndex) => (
-                            <Badge key={traitIndex} variant="outline" className="text-xs">
-                              {trait}
-                            </Badge>
-                          ))}
-                          {dog.personality.length > 3 && (
-                            <Badge variant="outline" className="text-xs">
-                              +{dog.personality.length - 3} more
-                            </Badge>
-                          )}
-                        </div>
                       </div>
 
                       <div className="space-y-2">

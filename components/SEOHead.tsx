@@ -10,7 +10,6 @@ interface SEOHeadProps {
   articlePublishedTime?: string;
   articleModifiedTime?: string;
   dogName?: string;
-  dogPrice?: string;
 }
 
 export function SEOHead({
@@ -21,8 +20,7 @@ export function SEOHead({
   ogImage = "https://trufflesmacedonia.com/og-image.jpg",
   articlePublishedTime,
   articleModifiedTime,
-  dogName,
-  dogPrice
+  dogName
 }: SEOHeadProps) {
 
   useEffect(() => {
@@ -260,7 +258,7 @@ export function SEOHead({
     };
 
     // Add dog-specific structured data
-    if (dogName && dogPrice) {
+    if (dogName) {
       structuredData["@graph"].push({
         "@type": "Product",
         "@id": `https://trufflesmacedonia.com/dog/${dogName.toLowerCase().replace(/\s+/g, '-')}#product`,
@@ -274,17 +272,6 @@ export function SEOHead({
           "@id": "https://trufflesmacedonia.com/#business"
         },
         "category": "Pets",
-        "offers": {
-          "@type": "Offer",
-          "price": dogPrice.replace(/[€$,]/g, ''),
-          "priceCurrency": "EUR",
-          "availability": "https://schema.org/InStock",
-          "seller": {
-            "@id": "https://trufflesmacedonia.com/#business"  
-          },
-          "validFrom": new Date().toISOString(),
-          "priceValidUntil": new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toISOString()
-        },
         "aggregateRating": {
           "@type": "AggregateRating",
           "ratingValue": "5",
@@ -313,7 +300,7 @@ export function SEOHead({
       const seoElements = document.querySelectorAll('[data-seo="true"]');
       seoElements.forEach(element => element.remove());
     };
-  }, [title, description, keywords, canonicalUrl, ogImage, articlePublishedTime, articleModifiedTime, dogName, dogPrice]);
+  }, [title, description, keywords, canonicalUrl, ogImage, articlePublishedTime, articleModifiedTime, dogName]);
 
   return null;
 }

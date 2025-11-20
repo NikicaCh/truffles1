@@ -15,9 +15,15 @@ import {
   X,
   ChevronLeft,
   ChevronRight,
+  ExternalLink,
+  Activity,
+  Shield,
+  Bone,
+  CheckCircle2
 } from "lucide-react";
 import { motion, useInView } from "motion/react";
-import type { Dog } from "../data/dogs";
+import type { Dog, ParentInfo } from "../data/dogs";
+import { getourDogs } from "../data/dogs";
 
 interface DogProfileProps {
   dog: Dog;
@@ -99,6 +105,60 @@ export function DogProfile({ dog, onBack }: DogProfileProps) {
   // Count of photos not fully shown initially (beyond the first visible thumbnail)
   const hiddenCount = Math.max(0, dog.images.length - 2); // we fully show index 0 (main) + index 1 (thumb)
 
+  // Helper to get parent name string
+  const getParentName = (parent: ParentInfo | string) => {
+    return typeof parent === 'string' ? parent : parent.name;
+  };
+
+  const renderParentInfo = (parent: ParentInfo | string) => {
+    if (typeof parent === 'string') {
+      return <p className="text-muted-foreground">{parent}</p>;
+    }
+    
+    // Check if this parent is one of our dogs
+    const ourDogs = getourDogs();
+    const parentDog = ourDogs.find(d => 
+      d.url && parent.url && d.url === parent.url
+    );
+    
+    return (
+      <div className="space-y-2">
+        <p className="text-muted-foreground flex items-center gap-2">
+          {parentDog ? (
+            // If it's our dog, link to their profile page
+            <a 
+              href={`/dog/${parentDog.id}?from=our`} 
+              className="text-primary hover:underline font-medium"
+              onClick={(e) => {
+                e.preventDefault();
+                router.push(`/dog/${parentDog.id}?from=our`);
+              }}
+            >
+              {parent.name}
+            </a>
+          ) : (
+            <span>{parent.name}</span>
+          )}
+          {parent.url && (
+            <a href={parent.url} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+              <ExternalLink className="h-3 w-3" />
+            </a>
+          )}
+        </p>
+        {/* Awards only for parents */}
+        {parent.awards && parent.awards.length > 0 && (
+          <div className="flex flex-wrap gap-1">
+            {parent.awards.map((award, idx) => (
+              <Badge key={idx} variant="secondary" className="text-xs bg-yellow-50 text-yellow-700 border-yellow-100">
+                <Award className="w-2 h-2 mr-1" /> {award}
+              </Badge>
+            ))}
+          </div>
+        )}
+      </div>
+    );
+  };
+
   return (
     <div ref={ref} className="min-h-screen bg-background pt-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -118,10 +178,10 @@ export function DogProfile({ dog, onBack }: DogProfileProps) {
           </Button>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-[600px_1fr] gap-8">
           {/* Image Gallery */}
           <motion.div
-            className="space-y-4"
+            className="space-y-3"
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
@@ -136,7 +196,7 @@ export function DogProfile({ dog, onBack }: DogProfileProps) {
               <ImageWithFallback
                 src={dog.images[0]}
                 alt={`${dog.name} - Main Photo`}
-                className="w-full h-80 object-cover rounded-lg shadow-lg"
+                className="w-full h-[400px] object-cover rounded-lg shadow-lg"
               />
               {isAvailableDog && (
                 <Badge
@@ -155,133 +215,170 @@ export function DogProfile({ dog, onBack }: DogProfileProps) {
 
             {/* Thumbnails */}
             {dog.images.length > 1 && (
-              <div className="grid grid-cols-2 gap-4">
-                {/* Second image (index 1) – normal clickable thumbnail */}
+              <div className="grid grid-cols-3 gap-3">
+                {/* Second image (index 1) */}
                 {dog.images[1] && (
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: "spring", stiffness: 400 }}
                     className="cursor-zoom-in"
-                    onClick={() => {
-                      
-                      openImage(1)}}
+                    onClick={() => openImage(1)}
                   >
                     <ImageWithFallback
                       src={dog.images[1]}
                       alt={`${dog.name} - Photo 2`}
-                      className="w-full h-32 object-cover rounded-lg shadow-md"
+                      className="w-full h-[120px] object-cover rounded-lg shadow-md"
                     />
                   </motion.div>
                 )}
 
-                {/* Third tile – blurred with "Show more" overlay (only when not expanded and there are more images) */}
-                {!showAllImages && dog.images[2] && (
-                  <div className="relative h-32 rounded-lg overflow-hidden">
+                {/* Third image (index 2) */}
+                {dog.images[2] && (
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ type: "spring", stiffness: 400 }}
+                    className="cursor-zoom-in"
+                    onClick={() => openImage(2)}
+                  >
                     <ImageWithFallback
                       src={dog.images[2]}
-                      alt={`${dog.name} - Hidden preview`}
-                      className="w-full h-full object-cover scale-105 filter blur-sm brightness-75"
+                      alt={`${dog.name} - Photo 3`}
+                      className="w-full h-[120px] object-cover rounded-lg shadow-md"
                     />
-                    <button
-                      type="button"
-                      onClick={() => {
-                        openImage(2)
-                        //setShowAllImages(true)
-                        }
-                      }
-                      className="absolute inset-0 flex flex-col items-center justify-center text-white font-medium bg-black/40 hover:bg-black/50 transition-colors"
-                    >
-                      <span className="text-sm">Show more</span>
-                      <span className="text-xs opacity-90">
-                        +{hiddenCount} photo{hiddenCount === 1 ? "" : "s"}
-                      </span>
-                    </button>
-                  </div>
+                  </motion.div>
                 )}
 
-                {/* Expanded mode – show all remaining images starting from index 2 */}
-                {showAllImages &&
-                  dog.images.slice(2).map((image, idx) => (
+                {/* Fourth image or show more button */}
+                {dog.images[3] && (
+                  !showAllImages && dog.images[4] ? (
+                    <div className="relative h-[120px] rounded-lg overflow-hidden cursor-pointer" onClick={() => openImage(3)}>
+                      <ImageWithFallback
+                        src={dog.images[3]}
+                        alt={`${dog.name} - Hidden preview`}
+                        className="w-full h-full object-cover scale-105 filter blur-sm brightness-75"
+                      />
+                      <div className="absolute inset-0 flex flex-col items-center justify-center text-white font-medium bg-black/40 hover:bg-black/50 transition-colors">
+                        <span className="text-sm">+{dog.images.length - 4}</span>
+                      </div>
+                    </div>
+                  ) : (
                     <motion.div
-                      key={`${image}-${idx}`}
                       whileHover={{ scale: 1.05 }}
                       transition={{ type: "spring", stiffness: 400 }}
                       className="cursor-zoom-in"
-                      onClick={() => {
-
-                        openImage(idx + 2)}}
+                      onClick={() => openImage(3)}
                     >
                       <ImageWithFallback
-                        src={image}
-                        alt={`${dog.name} - Photo ${idx + 3}`}
-                        className="w-full h-32 object-cover rounded-lg shadow-md"
+                        src={dog.images[3]}
+                        alt={`${dog.name} - Photo 4`}
+                        className="w-full h-[120px] object-cover rounded-lg shadow-md"
                       />
                     </motion.div>
-                  ))}
+                  )
+                )}
               </div>
             )}
           </motion.div>
 
           {/* Dog Info */}
           <motion.div
-            className="space-y-6"
+            className="space-y-4"
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <div>
-              <motion.h1 className="text-4xl mb-2 text-foreground">
-                {dog.name}
-              </motion.h1>
-              <p className="text-xl text-muted-foreground mb-4">
+              <div className="flex items-baseline gap-2 mb-1">
+                {dog.url ? (
+                  <a
+                    href={dog.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-baseline gap-2 hover:opacity-80 transition-opacity group"
+                  >
+                    <h1 className="text-3xl text-foreground group-hover:text-primary">
+                      {dog.name}
+                    </h1>
+                    <ExternalLink className="h-5 w-5 text-muted-foreground group-hover:text-primary" />
+                  </a>
+                ) : (
+                  <h1 className="text-3xl text-foreground">
+                    {dog.name}
+                  </h1>
+                )}
+                {dog.aka && (
+                  <span className="text-base text-muted-foreground">
+                    <span className="italic">aka</span> <span className="font-medium text-foreground">{dog.aka}</span>
+                  </span>
+                )}
+              </div>
+              <p className="text-muted-foreground">
                 {dog.gender} • {dog.color}
               </p>
-
-              {/* Price only for available/reserved */}
-              {isAvailableDog && (
-                <motion.div className="text-2xl text-primary mb-6">
-                  {dog.price}
-                </motion.div>
-              )}
             </div>
 
-            {/* Info Cards */}
-            <div className="grid grid-cols-2 gap-4">
+            {/* Info Cards - 2 column grid */}
+            <div className="grid grid-cols-2 gap-3">
+              {/* Age Card with birth date */}
+              <Card className="p-3">
+                <CardContent className="p-0 flex items-center space-x-2">
+                  <Calendar className="h-4 w-4 text-primary flex-shrink-0" />
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs text-muted-foreground">Age</p>
+                    <p className="font-medium text-sm">{dog.age}</p>
+                    <p className="text-xs text-muted-foreground">Born: {dog.birthDate}</p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Other cards */}
               {[
-                { icon: Calendar, label: "Age", value: dog.age },
                 { icon: Weight, label: "Weight", value: dog.weight },
-                { icon: Award, label: "Sire", value: dog.parents?.sire ?? "—" },
-                { icon: Heart, label: "Dam", value: dog.parents?.dam ?? "—" },
+                { icon: Award, label: "Sire", value: getParentName(dog.parents?.sire) ?? "—" },
+                { icon: Heart, label: "Dam", value: getParentName(dog.parents?.dam) ?? "—" },
               ].map((item, index) => (
-                <Card key={index} className="p-4">
-                  <CardContent className="p-0 flex items-center space-x-3">
-                    <item.icon className="h-5 w-5 text-primary" />
-                    <div>
-                      <p className="text-sm text-muted-foreground">
+                <Card key={index} className="p-3">
+                  <CardContent className="p-0 flex items-center space-x-2">
+                    <item.icon className="h-4 w-4 text-primary flex-shrink-0" />
+                    <div className="flex-1 min-w-0">
+                      <p className="text-xs text-muted-foreground">
                         {item.label}
                       </p>
-                      <p className="font-medium">{item.value}</p>
+                      <p className="font-medium text-sm truncate" title={item.value}>{item.value}</p>
                     </div>
                   </CardContent>
                 </Card>
               ))}
             </div>
 
-            {/* Personality */}
-            <div>
-              <h3 className="text-lg mb-3">Personality</h3>
-              <div className="flex flex-wrap gap-2">
-                {dog.personality.map((trait, index) => (
-                  <Badge key={index} variant="outline">
-                    {trait}
-                  </Badge>
-                ))}
-              </div>
-            </div>
+            {/* Awards Section - integrated in right column */}
+            {dog.awards && dog.awards.length > 0 && (
+              <Card>
+                <CardHeader className="pb-3">
+                  <CardTitle className="text-base flex items-center gap-2">
+                    <Award className="h-4 w-4 text-yellow-600" />
+                    Awards & Titles
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <div className="flex flex-wrap gap-2">
+                    {dog.awards.map((award, idx) => (
+                      <Badge 
+                        key={idx} 
+                        variant="secondary" 
+                        className="bg-yellow-50 text-yellow-800 hover:bg-yellow-100 border-yellow-200 text-xs"
+                      >
+                        {award}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            )}
 
             {/* Buttons — only for puppies for sale */}
             {isAvailableDog && (
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3">
                 <Button size="lg" className="flex-1" onClick={scrollToContact}>
                   Inquire About {dog.name}
                 </Button>
@@ -295,73 +392,106 @@ export function DogProfile({ dog, onBack }: DogProfileProps) {
 
         {/* Description & Health Info */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-16">
-          <Card>
-            <CardHeader>
-              <CardTitle>About {dog.name}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground leading-relaxed">
-                {dog.description}
-              </p>
-            </CardContent>
-          </Card>
+          {dog.description && (
+            <Card>
+              <CardHeader>
+                <CardTitle>About {dog.name}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground leading-relaxed">
+                  {dog.description}
+                </p>
+              </CardContent>
+            </Card>
+          )}
 
-          <Card>
+          <Card className={!dog.description ? "lg:col-span-2" : ""}>
             <CardHeader>
               <CardTitle>Health Information</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-3">
-              {[
-                { label: "Vaccinated", value: dog.healthInfo.vaccinated },
-                { label: "Microchipped", value: dog.healthInfo.microchipped },
-                { label: "Health Tested", value: dog.healthInfo.healthTested },
-                { label: "Health Guarantee", value: dog.healthInfo.healthGuarantee },
-              ].map((item, index) => (
-                <div key={index} className="flex items-center justify-between">
-                  <span>{item.label}</span>
-                  <Badge variant={item.value ? "default" : "secondary"}>
-                    {item.value ? "✓ Yes" : "Pending"}
-                  </Badge>
-                </div>
-              ))}
+            <CardContent className="space-y-4">
+               <div className="grid grid-cols-2 gap-4">
+                  <div className="flex items-start gap-3">
+                    <div className="mt-0.5">
+                      <Activity className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground mb-1">Hips</p>
+                      <p className="font-medium">{dog.healthInfo.hips}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="mt-0.5">
+                      <Bone className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground mb-1">Elbows</p>
+                      <p className="font-medium">{dog.healthInfo.elbows}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="mt-0.5">
+                      <Activity className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground mb-1">Patella</p>
+                      <p className="font-medium">{dog.healthInfo.patella}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="mt-0.5">
+                      <Shield className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground mb-1">Genetic Testing</p>
+                      <p className="font-medium">{dog.healthInfo.geneticTesting}</p>
+                    </div>
+                  </div>
+               </div>
             </CardContent>
           </Card>
         </div>
 
-        {/* Features & Suitable */}
+        {/* Features & Suitable - Only show if they exist */}
+        {(dog.features && dog.features.length > 0) || (dog.suitableFor && dog.suitableFor.length > 0) ? (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
-          <Card>
-            <CardHeader>
-              <CardTitle>Features & Highlights</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-2">
-                {dog.features.map((feature, index) => (
-                  <li key={index} className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-primary rounded-full" />
-                    <span className="text-sm">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
+          {dog.features && dog.features.length > 0 && (
+            <Card>
+              <CardHeader>
+                <CardTitle>Features & Highlights</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  {dog.features.map((feature, index) => (
+                    <li key={index} className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-primary rounded-full" />
+                      <span className="text-sm">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          )}
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Perfect For</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-2">
-                {dog.suitableFor.map((type, index) => (
-                  <li key={index} className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-green-500 rounded-full" />
-                    <span className="text-sm">{type}</span>
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
+          {dog.suitableFor && dog.suitableFor.length > 0 && (
+            <Card>
+              <CardHeader>
+                <CardTitle>Perfect For</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  {dog.suitableFor.map((type, index) => (
+                    <li key={index} className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-green-500 rounded-full" />
+                      <span className="text-sm">{type}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          )}
         </div>
+        ) : null}
 
         {/* Pedigree */}
         <div className="mt-8">
@@ -373,11 +503,11 @@ export function DogProfile({ dog, onBack }: DogProfileProps) {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <h4 className="font-medium mb-2">Sire (Father)</h4>
-                  <p className="text-muted-foreground">{dog.parents?.sire}</p>
+                  {renderParentInfo(dog.parents.sire)}
                 </div>
                 <div>
                   <h4 className="font-medium mb-2">Dam (Mother)</h4>
-                  <p className="text-muted-foreground">{dog.parents?.dam}</p>
+                  {renderParentInfo(dog.parents.dam)}
                 </div>
               </div>
             </CardContent>
