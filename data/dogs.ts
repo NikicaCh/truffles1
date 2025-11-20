@@ -69,10 +69,10 @@ export const availableDogs: Dog[] = [
     id: "luna-spring-2024",
     name: "Luna",
     gender: "Female",
-    birthDate: "March 15, 2024",
-    age: calculateAge("2024-03-15"),
+    birthDate: "January 13, 2020",
+    age: calculateAge("2020-01-13"),
     color: "Rich Brown with White Markings",
-    weight: "8.5 kg",
+    weight: "14 kg",
     status: "Available",
     parents: {
       sire: "Champion Romeo della Truffle",
@@ -240,10 +240,10 @@ export const ourDogs : Dog[] = [
     aka: "Luna",
     url: "https://lagotto.breedarchive.com/animal/view/bianka-7e81c821-7662-4444-bb5b-650906da67c3",
     gender: "Female",
-    birthDate: "March 15, 2024",
-    age: calculateAge("2024-03-15"),
+    birthDate: "January 13, 2020",
+    age: calculateAge("2020-01-13"),
     color: "White and Orange",
-    weight: "8.5 kg",
+    weight: "14 kg",
     parents: {
       sire: {
         name: "Bruno",
@@ -266,19 +266,19 @@ export const ourDogs : Dog[] = [
       "MK JCH - Macedonian Junior Champion"
     ],
     images: [
-      "/LUNA/LUNA1.webp",
-      "/LUNA/LUNA2.webp",
-      "/LUNA/LUNA3.webp",
-      "/LUNA/LUNA4.webp",
-      "/LUNA/LUNA5.webp",
-      "/LUNA/LUNA6.webp",
-      "/LUNA/LUNA7.webp",
-      "/LUNA/LUNA8.webp",
-      "/LUNA/LUNA9.webp",
-      "/LUNA/LUNA10.webp",
-      "/LUNA/LUNA11.webp",
-      "/LUNA/LUNA12.webp",
-      "/LUNA/LUNA.webp",
+      "/LUNA/lagotto-romagnolo-bianka-jumping-upward-in-forest.webp",
+      "/LUNA/lagotto-romagnolo-bianka-running-with-dogs-in-forest.webp",
+      "/LUNA/lagotto-romagnolo-bianka-with-found-truffle-portrait.webp",
+      "/LUNA/lagotto-romagnolo-bianka-leaping-fully-airborne-in-forest.webp",
+      "/LUNA/lagotto-romagnolo-bianka-sitting-on-couch-with-pillow.webp",
+      "/LUNA/lagotto-romagnolo-bianka-standing-on-forest-trail.webp",
+      "/LUNA/lagotto-romagnolo-bianka-running-horizontally-in-forest.webp",
+      "/LUNA/lagotto-romagnolo-bianka-playing-in-mud-puddle.webp",
+      "/LUNA/lagotto-romagnolo-bianka-jumping-high-near-vehicle.webp",
+      "/LUNA/lagotto-romagnolo-bianka-sitting-on-living-room-couch.webp",
+      "/LUNA/lagotto-romagnolo-bianka-in-meadow-with-truffle-harvest.webp",
+      "/LUNA/lagotto-romagnolo-bianka-with-dark-companion-in-forest.webp",
+      "/LUNA/lagotto-romagnolo-bianka-indoor-floor-portrait-closeup.webp",
     ]
   },
   {
@@ -289,7 +289,7 @@ export const ourDogs : Dog[] = [
     birthDate: "July 21, 2022",
     age: calculateAge("2022-07-21"),
     color: "White and Orange",
-    weight: "12kg",
+    weight: "14.5kg",
     parents: {
       sire: {
         name: "Aga",
@@ -323,13 +323,13 @@ export const ourDogs : Dog[] = [
       "Swiss Champion"
     ],
     images: [
-      "/KALI/KALI.webp",
-      "/KALI/KALI1.webp",
-      "/KALI/KALI2.webp",
-      "/KALI/KALI3.webp",
-      "/KALI/KALI4.webp",
-      "/KALI/KALI5.webp",
-      "/KALI/KALI6.webp",
+      "/KALI/lagotto-romagnolo-kali-show-grooming-stance-profile.webp",
+      "/KALI/lagotto-romagnolo-kali-show-grooming-stance-side-view.webp",
+      "/KALI/lagotto-romagnolo-kali-world-dog-show-geneva-award-diploma.webp",
+      "/KALI/lagotto-romagnolo-kali-professional-show-grooming-portrait.webp",
+      "/KALI/lagotto-romagnolo-kali-grand-prix-geneve-award-diploma.webp",
+      "/KALI/lagotto-romagnolo-kali-on-grooming-table-profile.webp",
+      "/KALI/lagotto-romagnolo-kali-playful-on-couch.webp",
     ]
   },
   {
@@ -370,13 +370,13 @@ export const ourDogs : Dog[] = [
     },
     awards: ["YCH - Macedonian Youth Champion"],
     images: [
-      "/ASTRA/ASTRA.webp",   
-      "/ASTRA/ASTRA1.webp",       
-      "/ASTRA/ASTRA2.webp",       
-      "/ASTRA/ASTRA3.webp",       
-      "/ASTRA/ASTRA4.webp",       
-      "/ASTRA/ASTRA5.webp",       
-      "/ASTRA/ASTRA6.webp",       
+      "/ASTRA/lagotto-romagnolo-astra-conformation-stance-in-backyard.webp",   
+      "/ASTRA/lagotto-romagnolo-astra-with-owner-kneeling-in-park.webp",       
+      "/ASTRA/lagotto-romagnolo-astra-standing-portrait-on-grass.webp",       
+      "/ASTRA/lagotto-romagnolo-astra-training-with-owner-in-park.webp",       
+      "/ASTRA/lagotto-romagnolo-astra-outdoor-portrait.webp",       
+      "/ASTRA/lagotto-romagnolo-astra-park-candid.webp",       
+      "/ASTRA/lagotto-romagnolo-astra-outdoor-action.webp",       
     ]
   },
   {
@@ -412,13 +412,13 @@ export const ourDogs : Dog[] = [
       "MK GR CH - Macedonian Grand Champion"
     ],
     images: [
-      "/AMI/AMI.webp",
-      "/AMI/AMI1.webp",
-      "/AMI/AMI2.webp",
-      "/AMI/AMI3.webp",
-      "/AMI/AMI4.webp",
-      "/AMI/AMI5.webp",
-      "/AMI/AMI6.webp",
+      "/AMI/lagotto-romagnolo-ami-forest-pine-needles-portrait.webp",
+      "/AMI/lagotto-romagnolo-ami-playful-upside-down-on-couch.webp",
+      "/AMI/lagotto-romagnolo-ami-sitting-on-grooming-table-at-salon.webp",
+      "/AMI/lagotto-romagnolo-ami-indoor-home-sitting.webp",
+      "/AMI/lagotto-romagnolo-ami-playful-belly-up-on-couch.webp",
+      "/AMI/lagotto-romagnolo-ami-outdoor-portrait.jpeg",
+      "/AMI/lagotto-romagnolo-ami-indoor-candid.webp",
     ]
   },
   {
@@ -450,17 +450,17 @@ export const ourDogs : Dog[] = [
       patella: "Excellent"
     },
     images: [
-      "/IGOR/IGOR11.webp",
-      "/IGOR/IGOR1.webp",
-      "/IGOR/IGOR2.webp",
-      "/IGOR/IGOR3.webp",
-      "/IGOR/IGOR4.webp",
-      "/IGOR/IGOR5.webp",
-      "/IGOR/IGOR6.webp",
-      "/IGOR/IGOR7.webp",
-      "/IGOR/IGOR8.webp",
-      "/IGOR/IGOR9.webp",
-      "/IGOR/IGOR10.webp",
+      "/IGOR/lagotto-romagnolo-igor-first-place-winner-cacib-mavrovo-show.webp",
+      "/IGOR/lagotto-romagnolo-igor-conformation-stance-with-handler-in-backyard.webp",
+      "/IGOR/lagotto-romagnolo-igor-show-ring-conformation-stance.webp",
+      "/IGOR/lagotto-romagnolo-igor-at-dog-show-with-judge-and-handler.webp",
+      "/IGOR/lagotto-romagnolo-igor-gaiting-at-dog-show-with-handler.webp",
+      "/IGOR/lagotto-romagnolo-igor-winners-podium-cacib-mavrovo.webp",
+      "/IGOR/lagotto-romagnolo-igor-gaiting-in-show-ring.webp",
+      "/IGOR/lagotto-romagnolo-igor-show-event-action.webp",
+      "/IGOR/lagotto-romagnolo-igor-show-portrait.webp",
+      "/IGOR/lagotto-romagnolo-igor-at-show-candid.webp",
+      "/IGOR/lagotto-romagnolo-igor-additional-show-photo.webp",
     ]
   },
   {
@@ -502,7 +502,8 @@ export const ourDogs : Dog[] = [
         ]
       },
       dam: {
-        name: "Mother name needed",
+        name: "Marian Crna Cizmica",
+        url: "https://lagotto.breedarchive.com/animal/view/marian-crna-cizmica-4b1aff6e-1a44-42d8-b2cc-ab0562a111d0",
         awards: ["MK CH - Macedonian Conformation Champion"]
       }
     },
@@ -521,17 +522,118 @@ export const ourDogs : Dog[] = [
       "AL CH - Champion of Albania"
     ],
     images: [
-      "/AHIL/AHIL.webp",
-      "/AHIL/AHIL1.webp",
-      "/AHIL/AHIL2.webp",
-      "/AHIL/AHIL3.webp",
-      "/AHIL/AHIL4.webp",
-      "/AHIL/AHIL5.webp",
-      "/AHIL/AHIL6.webp",
-      "/AHIL/AHIL7.webp",
-      "/AHIL/AHIL8.webp",
-      "/AHIL/AHIL9.webp",
-      "/AHIL/AHIL10.webp",
+      "/AHIL/lagotto-romagnolo-ahilej-side-profile-portrait.jpeg",
+      "/AHIL/lagotto-romagnolo-ahilej-with-owner-on-street.webp",
+      "/AHIL/lagotto-romagnolo-ahilej-show-photo.webp",
+      "/AHIL/lagotto-romagnolo-ahilej-with-owners-on-show-stage.webp",
+      "/AHIL/lagotto-romagnolo-ahilej-show-portrait.webp",
+      "/AHIL/lagotto-romagnolo-ahilej-outdoor-portrait.webp",
+      "/AHIL/lagotto-romagnolo-ahilej-conformation-stance.webp",
+      "/AHIL/lagotto-romagnolo-ahilej-candid-photo.webp",
+      "/AHIL/lagotto-romagnolo-ahilej-action-shot.webp",
+      "/AHIL/lagotto-romagnolo-ahilej-additional-portrait.webp",
+      "/AHIL/lagotto-romagnolo-ahilej-show-candid.webp",
+    ]
+  },
+  {
+    id: "fanny-from-truffles-macedonia",
+    name: "Fanny from Truffles Macedonia",
+    gender: "Female",
+    birthDate: "November 24, 2024",
+    age: calculateAge("2024-11-24"),
+    color: "Brown",
+    weight: "14kg",
+    parents: {
+      sire: {
+        name: "Ahilej",
+        url: "https://lagotto.breedarchive.com/animal/view/ahilej-crna-cizmica-2cf8afa4-68a7-42b3-b57c-487c92d59daa",
+        awards: [
+          "MK CH - Macedonian Conformation Champion",
+          "MK JCH - Macedonian Junior Champion",
+          "XK Ch - Champion of Kosovo",
+          "RS CH - Serbian Conformation Champion",
+          "AL CH - Champion of Albania"
+        ]
+      },
+      dam: {
+        name: "Bianka",
+        url: "https://lagotto.breedarchive.com/animal/view/bianka-7e81c821-7662-4444-bb5b-650906da67c3",
+        awards: [
+          "MK CH - Macedonian Conformation Champion",
+          "MK JCH - Macedonian Junior Champion"
+        ]
+      }
+    },
+    personality: ["Playful", "Energetic", "Curious", "Friendly"],
+    healthInfo: {
+      geneticTesting: "All Clear",
+      hips: "Excellent",
+      elbows: "Excellent",
+      patella: "Excellent"
+    },
+    awards: [
+      "MK YCH - Macedonian Youth Champion"
+    ],
+    images: [
+      "/FANNY/lagotto-romagnolo-fanny-held-by-owner-with-youth-champion-trophy.webp",
+      "/FANNY/lagotto-romagnolo-fanny-conformation-stance-with-handler-and-trophy.webp",
+      "/FANNY/lagotto-romagnolo-fanny-closeup-portrait-with-trophy.webp",
+      "/FANNY/lagotto-romagnolo-fanny-conformation-stance-at-outdoor-show.webp",
+    ]
+  },
+  {
+    id: "lara-from-truffles-macedonia",
+    name: "Lara from Truffles Macedonia",
+    gender: "Female",
+    birthDate: "February 22, 2023",
+    age: calculateAge("2023-02-22"),
+    color: "White",
+    weight: "14kg",
+    parents: {
+      sire: {
+        name: "Ahilej",
+        url: "https://lagotto.breedarchive.com/animal/view/ahilej-crna-cizmica-2cf8afa4-68a7-42b3-b57c-487c92d59daa",
+        awards: [
+          "MK CH - Macedonian Conformation Champion",
+          "MK JCH - Macedonian Junior Champion",
+          "XK Ch - Champion of Kosovo",
+          "RS CH - Serbian Conformation Champion",
+          "AL CH - Champion of Albania"
+        ]
+      },
+      dam: {
+        name: "Misha",
+        url: "https://lagotto.breedarchive.com/animal/view/misha-e342c565-26a8-4f85-843b-5a8b03d60e3a",
+        awards: [
+          "MK CH - Macedonian Conformation Champion",
+          "MK JCH - Macedonian Junior Champion"
+        ]
+      }
+    },
+    personality: ["Intelligent", "Active", "Friendly", "Alert", "Enthusiastic"],
+    healthInfo: {
+      geneticTesting: "All Clear",
+      hips: "Excellent",
+      elbows: "Excellent",
+      patella: "Excellent"
+    },
+    awards: [
+      "MK CH - Macedonian Conformation Champion",
+      "MK JCH - Macedonian Junior Champion"
+    ],
+    features: [
+      "Active in Tracking sports",
+      "Active in Track & Search",
+      "Active in Nosework"
+    ],
+    images: [
+      "/LARA/lagotto-romagnolo-lara-groomed-standing-on-grooming-table.jpeg",
+      "/LARA/lagotto-romagnolo-lara-indoor-training-with-treat-on-couch.webp",
+      "/LARA/lagotto-romagnolo-lara-standing-in-kitchen-indoor.webp",
+      "/LARA/lagotto-romagnolo-lara-sitting-on-couch-side-profile.webp",
+      "/LARA/lagotto-romagnolo-lara-sitting-on-couch-portrait.webp",
+      "/LARA/lagotto-romagnolo-lara-training-session-looking-up-at-treat.webp",
+      "/LARA/lagotto-romagnolo-lara-conformation-stance-with-handler-on-street.webp",
     ]
   }
 ]
@@ -563,4 +665,4 @@ export const HAS_AVAILABLE_PUPPIES = false;
 
 // Configuration: Set to false to hide upcoming litters section
 // Set to true to show upcoming litters
-export const HAS_UPCOMING_LITTERS = true;
+export const HAS_UPCOMING_LITTERS = false;

@@ -136,7 +136,7 @@ export function Footer() {
               <div className="flex items-start space-x-2">
                 <MapPin className="h-4 w-4 mt-1" />
                 <div>
-                  <p>Ohrid Region</p>
+                  <p>Kumanovo Region</p>
                   <p className="text-xs">North Macedonia</p>
                 </div>
               </div>
@@ -149,7 +149,7 @@ export function Footer() {
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="text-primary-foreground/80 text-sm">
-            <p>&copy; 2024 Truffles Macedonia. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Truffles Macedonia. All rights reserved.</p>
           </div>
 
         </div>

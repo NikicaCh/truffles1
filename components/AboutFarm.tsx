@@ -75,8 +75,8 @@ export function AboutFarm() {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <ImageWithFallback
-              src="/dog10.jpeg"
-              alt="Beautiful countryside farm setting with Lagotto Romagnolo dogs"
+              src="/GALLERY/lagotto-europe-two-brown-puppies-and-truffles.jpeg"
+              alt="Lagotto Romagnolo puppies with fresh truffle harvest at Truffles Macedonia"
               className="w-full h-80 object-cover rounded-lg shadow-lg"
               />
             </motion.div>

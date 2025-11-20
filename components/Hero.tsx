@@ -27,31 +27,21 @@ export function Hero() {
   // SEO-optimized hero images showcasing the breed
   const heroImages = [
     {
-      src: "/dog1.jpeg",
-      // alt: "Champion Lagotto Romagnolo dog in natural outdoor setting",
-      // title: "Champion Bloodline Lagotto Romagnolo",
-      // caption: "Our breeding dogs showcase perfect conformation and temperament"
+      src: "/GALLERY/lagotto-europe-lightbrown-with-trophy.jpeg",
+      alt: "Champion Lagotto Romagnolo with trophy from Truffles Macedonia",
     },
     {
-      src: "/dog4.jpeg",
-      alt: "Healthy Lagotto Romagnolo puppy playing in countryside",
-      // title: "Healthy, Socialized Puppies",
-      // caption: "Our puppies are raised with love and expert care"
+      src: "/GALLERY/lagotto-europe-white-competition.jpeg",
+      alt: "Lagotto Romagnolo at professional dog show competition",
     },
     {
-      src: "/dog3.jpeg",
-      alt: "Champion Lagotto Romagnolo dog in natural outdoor setting",
-      // title: "Champion Bloodline Lagotto Romagnolo",
-      // caption: "Our breeding dogs showcase perfect conformation and temperament"
+      src: "/GALLERY/lagotto-europe-dark-brown-forest.jpeg",
+      alt: "Beautiful dark brown Lagotto Romagnolo in natural forest environment",
     },
     {
-      src: "/Dog10.55.jpeg",
-      alt: "Healthy Lagotto Romagnolo puppy playing in countryside",
-      // title: "Healthy, Socialized Puppies",
-      // caption: "Our puppies are raised with love and expert care"
+      src: "/GALLERY/lagotto-europe-puppies-on-couch.jpeg",
+      alt: "Adorable Lagotto Romagnolo puppies relaxing at home",
     },
-
-
   ];
 
   const nextImage = () => {
@@ -258,7 +248,7 @@ export function Hero() {
                 >
                   <div className="text-center max-w-4xl mx-auto">
                     <h2 className="text-2xl md:text-3xl text-foreground mb-6">
-                    Our dogs have achieved Champion, Interchampion, and International Champion titles — a testament to their world-class quality and breeding excellence.                    </h2>
+                    Our dogs have achieved Champion, Interchampion, and International Champion titles - a testament to their world-class quality and breeding excellence.                    </h2>
                     {/* <p className="text-muted-foreground mb-6 leading-relaxed">
                       The Lagotto Romagnolo is the only dog breed specifically bred for truffle hunting. Originating from the wetlands of Italy, these intelligent, loyal, and hypoallergenic dogs have been perfecting their skills for centuries. At Truffles Macedonia, we preserve this ancient heritage while producing modern family companions that excel both in the field and at home.
                     </p>
