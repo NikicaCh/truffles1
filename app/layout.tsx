@@ -5,8 +5,12 @@ import { Toaster } from '@/components/ui/sonner'
 export const metadata: Metadata = {
   metadataBase: new URL('https://trufflesmacedonia.com'),
   title: {
-    default: 'Truffles Macedonia - Premium Lagotto Romagnolo',
+    default: 'Truffles Macedonia | Premium Lagotto Romagnolo Breeders',
     template: '%s | Truffles Macedonia'
+  },
+  icons: {
+    icon: '/logotto.webp',
+    apple: '/logotto.webp'
   },
   description: "Europe's leading Lagotto Romagnolo breeders since 1999. Champion bloodline puppies, health tested, Italian truffle hunting dogs.",
   keywords: [
