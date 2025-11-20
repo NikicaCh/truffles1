@@ -17,9 +17,10 @@ export default function App() {
   // Generate SEO data based on current route
   const getSEOData = () => {
     if (currentRoute === 'dog-profile' && currentDog) {
+      const suitable = currentDog.suitableFor ? currentDog.suitableFor.join(', ') : 'families and active individuals';
       return {
         title: `${currentDog.name} - ${currentDog.gender} Lagotto Romagnolo Puppy | Truffles Macedonia`,
-        description: `Meet ${currentDog.name}, a beautiful ${currentDog.gender.toLowerCase()} ${currentDog.color} Lagotto Romagnolo puppy from champion bloodlines. ${currentDog.age}, health tested, perfect for ${currentDog.suitableFor.join(', ')}. Available at Truffles Macedonia.`,
+        description: `Meet ${currentDog.name}, a beautiful ${currentDog.gender.toLowerCase()} ${currentDog.color} Lagotto Romagnolo puppy from champion bloodlines. ${currentDog.age}, health tested, perfect for ${suitable}. Available at Truffles Macedonia.`,
         keywords: `${currentDog.name}, Lagotto Romagnolo puppy, ${currentDog.gender}, ${currentDog.color}, ${currentDog.age}, champion bloodlines, truffle hunting dog, hypoallergenic dog, Truffles Macedonia`,
         canonicalUrl: `https://trufflesmacedonia.com/dog/${dogId}`,
         dogName: currentDog.name,
