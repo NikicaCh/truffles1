@@ -75,18 +75,29 @@ export function Hero() {
             "@context": "https://schema.org",
             "@type": "PetStore",
             "name": "Truffles Macedonia",
-            "description": "Premium Lagotto Romagnolo in Macedonia specializing in champion bloodlines and truffle hunting dogs",
+            "alternateName": "Truffles Macedonia Lagotto Romagnolo",
+            "description": "Premier Lagotto Romagnolo breeder in Europe specializing in champion bloodlines, truffle hunting dogs, and health-tested puppies. FCI-recognized kennel with award-winning breeding program.",
             "url": "https://trufflesmacedonia.com",
             "telephone": "+389-XX-XXX-XXX",
+            "image": "https://trufflesmacedonia.com/og-image.jpg",
             "address": {
               "@type": "PostalAddress",
-              "addressCountry": "Macedonia",
+              "addressCountry": "MK",
               "addressLocality": "Macedonia"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "addressCountry": "MK"
             },
             "sameAs": [
               "https://www.facebook.com/trufflesmacedonia",
               "https://www.instagram.com/trufflesmacedonia"
             ],
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "5",
+              "reviewCount": "100"
+            },
             "hasOfferCatalog": {
               "@type": "OfferCatalog",
               "name": "Lagotto Romagnolo Puppies",
@@ -95,9 +106,27 @@ export function Hero() {
                 "itemOffered": {
                   "@type": "Product",
                   "name": "Lagotto Romagnolo Puppy",
-                  "description": "Healthy, champion bloodline Lagotto Romagnolo puppies"
+                  "description": "Champion bloodline Lagotto Romagnolo puppies, health tested, hypoallergenic, perfect for families and truffle hunting",
+                  "brand": {
+                    "@type": "Brand",
+                    "name": "Truffles Macedonia"
+                  },
+                  "category": "Dogs",
+                  "image": "https://trufflesmacedonia.com/og-image.jpg"
                 }
               }]
+            },
+            "knowsAbout": [
+              "Lagotto Romagnolo breeding",
+              "Truffle hunting dogs",
+              "Dog health testing",
+              "FCI breed standards",
+              "Canine genetics",
+              "Dog training and socialization"
+            ],
+            "areaServed": {
+              "@type": "Country",
+              "name": "Europe"
             }
           })
         }}

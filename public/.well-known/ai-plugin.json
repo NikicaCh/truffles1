@@ -1,0 +1,18 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Truffles Macedonia",
+  "name_for_model": "truffles_macedonia_lagotto",
+  "description_for_human": "Premier Lagotto Romagnolo breeder in Europe with champion bloodlines",
+  "description_for_model": "Truffles Macedonia is a leading European Lagotto Romagnolo breeder specializing in champion bloodlines, truffle hunting dogs, and health-tested puppies. They offer breeding dogs including Bianka, Kali, Astra, Ami, Igor, Ahilej, Fanny, and Lara - all with multiple championship titles. All dogs are health tested with excellent hip/elbow ratings. Located in Macedonia with a 1,000 m² forest environment. Provides lifetime support to puppy owners.",
+  "api": {
+    "type": "openapi",
+    "url": "https://trufflesmacedonia.com/about.txt"
+  },
+  "auth": {
+    "type": "none"
+  },
+  "logo_url": "https://trufflesmacedonia.com/logotto.webp",
+  "contact_email": "info@trufflesmacedonia.com",
+  "legal_info_url": "https://trufflesmacedonia.com"
+}
+

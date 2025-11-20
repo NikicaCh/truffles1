@@ -12,14 +12,21 @@ export const metadata: Metadata = {
     icon: '/logotto.webp',
     apple: '/logotto.webp'
   },
-  description: "Europe's leading Lagotto Romagnolo breeders since 1999. Champion bloodline puppies, health tested, Italian truffle hunting dogs.",
+  description: "Truffles Macedonia - Premier Lagotto Romagnolo breeder in Europe. Champion bloodlines, health-tested puppies, award-winning Italian truffle hunting dogs. FCI-recognized kennel with lifetime support.",
   keywords: [
     'Lagotto Romagnolo breeder',
     'Lagotto Romagnolo puppies for sale',
     'truffle hunting dogs',
+    'Italian water dog',
+    'hypoallergenic dogs',
     'champion bloodlines',
     'European dog breeder',
-    'Macedonia'
+    'Macedonia',
+    'FCI kennel',
+    'Lagotto Romagnolo Macedonia',
+    'non-shedding dogs',
+    'truffle dogs Europe',
+    'Lagotto breeder Europe'
   ],
   alternates: {
     canonical: '/'   

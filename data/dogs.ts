@@ -87,9 +87,9 @@ export const availableDogs: Dog[] = [
       patella: "Excellent"
     },
     images: [
-      "/dog1.jpeg",
-      "/dog1.jpeg",
-      "/dog1.jpeg"
+      "/GALLERY/lagotto-europe-brown-puppy.jpeg",
+      "/GALLERY/lagotto-europe-brown-puppy-grass.jpeg",
+      "/GALLERY/lagotto-europe-brown-puppy-garden.jpeg"
     ],
     features: [
       "Champion bloodlines",
@@ -128,12 +128,12 @@ export const availableDogs: Dog[] = [
       patella: "Excellent"
     },
     images: [
-      "/dog1.jpeg",
-      "/dog5.jpeg",
-      "/dog5.jpeg",
-      "/dog5.jpeg",
-      "/dog5.jpeg",
-      "/dog5.jpeg"
+      "/GALLERY/lagotto-europe-brown-and-white-puppy.jpeg",
+      "/GALLERY/lagotto-europe-brown-and-white-puppy-run.jpeg",
+      "/GALLERY/lagotto-europe-brown-puppy-standing.jpeg",
+      "/GALLERY/lagotto-europe-brown-puppy-white.jpeg",
+      "/GALLERY/lagotto-europe-brown-puppy-with-white.jpeg",
+      "/GALLERY/lagotto-europe-brown-puppy-with-white-legs.jpeg"
     ],
     features: [
       "Excellent conformation",
@@ -172,9 +172,9 @@ export const availableDogs: Dog[] = [
       patella: "Excellent"
     },
     images: [
-      "/dog1.jpeg",
-      "/dog1.jpeg",
-      "/dog1.jpeg"
+      "/GALLERY/lagotto-europe-white-puppy.jpeg",
+      "/GALLERY/lagotto-europe-white-puppy-igor.jpeg",
+      "/GALLERY/lagotto-europe-white-with-brown-eyes-puppy.jpeg"
     ],
     features: [
       "Excellent with children",
@@ -213,8 +213,8 @@ export const availableDogs: Dog[] = [
       patella: "Excellent"
     },
     images: [
-      "/dog1.jpeg",
-      "/dog1.jpeg",
+      "/GALLERY/lagotto-europe-mixed-puppy.jpeg",
+      "/GALLERY/lagotto-europe-mixed-puppies.jpeg",
     ],
     features: [
       "Champion parents",
@@ -575,10 +575,10 @@ export const ourDogs : Dog[] = [
       "MK YCH - Macedonian Youth Champion"
     ],
     images: [
-      "/FANNY/lagotto-romagnolo-fanny-held-by-owner-with-youth-champion-trophy.webp",
-      "/FANNY/lagotto-romagnolo-fanny-conformation-stance-with-handler-and-trophy.webp",
-      "/FANNY/lagotto-romagnolo-fanny-closeup-portrait-with-trophy.webp",
-      "/FANNY/lagotto-romagnolo-fanny-conformation-stance-at-outdoor-show.webp",
+      "/FANNY/lagotto-romagnolo-fanny-held-by-owner-with-youth-champion-trophy.jpeg",
+      "/FANNY/lagotto-romagnolo-fanny-conformation-stance-with-handler-and-trophy.jpeg",
+      "/FANNY/lagotto-romagnolo-fanny-closeup-portrait-with-trophy.jpeg",
+      "/FANNY/lagotto-romagnolo-fanny-conformation-stance-at-outdoor-show.jpeg",
     ]
   },
   {
@@ -628,12 +628,12 @@ export const ourDogs : Dog[] = [
     ],
     images: [
       "/LARA/lagotto-romagnolo-lara-groomed-standing-on-grooming-table.jpeg",
-      "/LARA/lagotto-romagnolo-lara-indoor-training-with-treat-on-couch.webp",
-      "/LARA/lagotto-romagnolo-lara-standing-in-kitchen-indoor.webp",
-      "/LARA/lagotto-romagnolo-lara-sitting-on-couch-side-profile.webp",
-      "/LARA/lagotto-romagnolo-lara-sitting-on-couch-portrait.webp",
-      "/LARA/lagotto-romagnolo-lara-training-session-looking-up-at-treat.webp",
-      "/LARA/lagotto-romagnolo-lara-conformation-stance-with-handler-on-street.webp",
+      "/LARA/lagotto-romagnolo-lara-indoor-training-with-treat-on-couch.jpeg",
+      "/LARA/lagotto-romagnolo-lara-standing-in-kitchen-indoor.jpeg",
+      "/LARA/lagotto-romagnolo-lara-sitting-on-couch-side-profile.jpeg",
+      "/LARA/lagotto-romagnolo-lara-sitting-on-couch-portrait.jpeg",
+      "/LARA/lagotto-romagnolo-lara-training-session-looking-up-at-treat.jpeg",
+      "/LARA/lagotto-romagnolo-lara-conformation-stance-with-handler-on-street.jpeg",
     ]
   }
 ]
