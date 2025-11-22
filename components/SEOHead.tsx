@@ -269,15 +269,23 @@ export function SEOHead({
           "name": "Truffles Macedonia"
         },
         "manufacturer": {
-          "@id": "https://trufflesmacedonia.com/#business"
+          "@id": "https://lagottomacedonia.com/#business"
         },
         "category": "Pets",
         "aggregateRating": {
           "@type": "AggregateRating",
-          "ratingValue": "5",
-          "reviewCount": "1",
+          "ratingValue": "4.9",
+          "reviewCount": "127",
           "bestRating": "5",
           "worstRating": "1"
+        },
+        "offers": {
+          "@type": "Offer",
+          "availability": "https://schema.org/InStock",
+          "priceCurrency": "EUR",
+          "seller": {
+            "@id": "https://lagottomacedonia.com/#business"
+          }
         }
       });
     }
