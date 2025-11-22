@@ -1,0 +1,28 @@
+/* TEAM */
+Owner: Truffles Macedonia
+Site: https://trufflesmacedonia.com
+Location: North Macedonia, Europe
+
+/* THANKS */
+To all our dog breeding families around the world
+
+/* SITE */
+Last update: 2024/11/22
+Standards: HTML5, CSS3, JavaScript ES6+
+Components: React, Next.js, TypeScript, Tailwind CSS
+Software: Next.js 15, React 19
+
+/* BREEDING */
+Breed: Lagotto Romagnolo
+Focus: Champion Bloodlines, Truffle Hunting, Family Companions
+Since: 1999
+Recognition: FCI Kennel, Multiple European Championships
+
+/* DOGS */
+Breeding Dogs: 8 Champion Bloodline Dogs
+Health Testing: Complete DNA, Hip & Elbow X-rays
+Environment: 1,000 m² Forest at 850m Altitude
+Support: Lifetime Guidance & Support
+
+For more information: truffles.macedonia@gmail.com
+

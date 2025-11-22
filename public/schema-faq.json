@@ -1,0 +1,87 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a Lagotto Romagnolo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Lagotto Romagnolo is an Italian water dog breed originally used for truffle hunting. They are known for their hypoallergenic curly coat, high intelligence, excellent trainability, and family-friendly temperament. They are non-shedding dogs perfect for families with allergies."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are Lagotto Romagnolo dogs good family pets?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! Lagotto Romagnolo dogs make excellent family pets. They are loyal, affectionate, intelligent, and great with children. Their hypoallergenic coat makes them ideal for families with allergies, and they are active, playful companions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you ship puppies internationally?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Truffles Macedonia ships puppies worldwide. We provide all necessary health certificates, vaccinations, and documentation for international transport. We ensure safe and comfortable transport for all our puppies."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are your dogs health tested?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, all our breeding dogs undergo comprehensive health testing including hip dysplasia screening, elbow dysplasia screening, patella examination, and genetic testing. All our dogs have excellent ratings and are clear for hereditary diseases. We provide health guarantees with all puppies."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are champion bloodlines?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Champion bloodlines mean our dogs come from parents and grandparents who have won championship titles at FCI-recognized dog shows across Europe. Our dogs hold titles including Macedonian Champion, Serbian Champion, Swiss Champion, and more. This ensures superior genetics, temperament, and conformation to breed standards."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does a Lagotto Romagnolo puppy cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pricing varies based on the puppy's pedigree, parents' championship titles, and intended purpose (pet vs. breeding/show). Please contact us directly for current pricing and availability. All puppies come with health guarantees, documentation, and lifetime support."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is Truffles Macedonia located?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Truffles Macedonia is located in North Macedonia, Europe. Our facility features a 1,000 m² forest environment at 850 meters altitude, providing an ideal natural setting for our dogs to thrive."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do Lagotto Romagnolo dogs shed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, Lagotto Romagnolo dogs are non-shedding and hypoallergenic. They have a curly, woolly coat similar to a poodle that requires regular grooming but does not shed, making them perfect for people with allergies."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Lagotto Romagnolo dogs be trained for truffle hunting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! Lagotto Romagnolo is the only dog breed specifically bred for truffle hunting. They have an exceptional sense of smell and natural instinct for finding truffles. With proper training, they make excellent truffle hunting companions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What support do you provide after purchase?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We provide lifetime support to all our puppy owners. This includes guidance on nutrition, training, health care, grooming, and any questions that arise throughout your dog's life. We remain committed to our dogs and their families forever."
+      }
+    }
+  ]
+}
+

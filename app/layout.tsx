@@ -49,6 +49,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="alternate" type="application/json" href="/.well-known/ai-plugin.json" />
+        <link rel="alternate" type="application/json" href="/.well-known/ai.json" />
+        <link rel="author" href="/humans.txt" />
+        <meta name="google-site-verification" content="REPLACE_WITH_YOUR_VERIFICATION_CODE" />
+      </head>
       <body>
         {children}
         <Toaster />
