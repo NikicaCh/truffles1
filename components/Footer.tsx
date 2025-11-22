@@ -115,7 +115,7 @@ export function Footer() {
               <div className="flex items-start space-x-2">
                 <Mail className="h-4 w-4 mt-1" />
                 <div>
-                  <p>info@trufflesmacedonia.com</p>
+                  <p>truffles.macedonia@gmail.com</p>
                   <p className="text-xs">Response within 24 hours</p>
                 </div>
               </div>

@@ -107,7 +107,7 @@ export function SEOHead({
           "description": "Premium Lagotto Romagnolo specializing in champion bloodlines and authentic Italian truffle hunting dogs",
           "url": "https://trufflesmacedonia.com",
           "telephone": "+389-XX-XXX-XXX",
-          "email": "info@trufflesmacedonia.com",
+          "email": "truffles.macedonia@gmail.com",
           "foundingDate": "1999",
           "founder": {
             "@type": "Person",

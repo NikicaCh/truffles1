@@ -121,7 +121,7 @@ export function Contact() {
                   {
                     icon: Mail,
                     title: "Email",
-                    main: "info@trufflesmacedonia.com",
+                    main: "truffles.macedonia@gmail.com",
                     sub: "We respond within 24 hours",
                   },
                   {
