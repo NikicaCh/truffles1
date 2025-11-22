@@ -5,6 +5,7 @@ import { SEOHead } from "./components/SEOHead";
 import { Breadcrumbs } from "./components/Breadcrumbs";
 import { Sitemap } from "./components/Sitemap";
 import { availableDogs } from "./data/dogs";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export default function App() {
   const { currentRoute, dogId, navigate } = useRouter();
@@ -78,7 +79,7 @@ export default function App() {
         dogId={dogId} 
         onNavigate={navigate} 
       />
-      
+      <SpeedInsights />
       <Footer />
     </div>
   );
