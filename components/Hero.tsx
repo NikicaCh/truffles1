@@ -123,7 +123,9 @@ export function Hero() {
                   "offers": {
                     "@type": "Offer",
                     "availability": "https://schema.org/InStock",
-                    "priceCurrency": "EUR"
+                    "priceCurrency": "EUR",
+                    "price": "2500",
+                    "priceValidUntil": "2025-12-31"
                   }
                 }
               }]
