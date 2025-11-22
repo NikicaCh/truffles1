@@ -3,7 +3,7 @@ import './globals.css'
 import { Toaster } from '@/components/ui/sonner'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://trufflesmacedonia.com'),
+  metadataBase: new URL('https://lagottomacedonia.com'),
   title: {
     default: 'Truffles Macedonia | Premium Lagotto Romagnolo Breeders',
     template: '%s | Truffles Macedonia'
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     siteName: 'Truffles Macedonia',
-    url: 'https://trufflesmacedonia.com',
+    url: 'https://lagottomacedonia.com',
     images: [{ url: '/og-image.jpg' }]
   },
   twitter: {

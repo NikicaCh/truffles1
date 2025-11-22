@@ -2,10 +2,10 @@
   "schema_version": "1.0",
   "name": "Truffles Macedonia",
   "description": "Premier European Lagotto Romagnolo breeder specializing in champion bloodlines and truffle hunting dogs",
-  "url": "https://trufflesmacedonia.com",
+  "url": "https://lagottomacedonia.com",
   "contact": {
     "email": "truffles.macedonia@gmail.com",
-    "website": "https://trufflesmacedonia.com"
+    "website": "https://lagottomacedonia.com"
   },
   "capabilities": [
     "Lagotto Romagnolo breeding information",
@@ -26,10 +26,10 @@
     "Champion Bloodlines",
     "FCI Recognized Kennel"
   ],
-  "api_documentation": "https://trufflesmacedonia.com/about.txt",
-  "structured_data": "https://trufflesmacedonia.com",
-  "sitemap": "https://trufflesmacedonia.com/sitemap.xml",
-  "robots": "https://trufflesmacedonia.com/robots.txt",
+  "api_documentation": "https://lagottomacedonia.com/about.txt",
+  "structured_data": "https://lagottomacedonia.com",
+  "sitemap": "https://lagottomacedonia.com/sitemap.xml",
+  "robots": "https://lagottomacedonia.com/robots.txt",
   "last_updated": "2024-11-22"
 }
 

@@ -14,7 +14,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/'
       }
     ],
-    sitemap: 'https://trufflesmacedonia.com/sitemap.xml'
+    sitemap: 'https://lagottomacedonia.com/sitemap.xml'
   }
 }
 

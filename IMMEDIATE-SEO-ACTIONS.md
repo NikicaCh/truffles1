@@ -12,7 +12,7 @@ These are the **TOP 5 CRITICAL** actions you must take TODAY for maximum SEO imp
 3. Enter business name: **Truffles Macedonia**
 4. Choose category: **Pet Breeder** or **Dog Breeder**
 5. Add location: **North Macedonia** (add exact address if possible)
-6. Add phone number and website: **https://trufflesmacedonia.com**
+6. Add phone number and website: **https://lagottomacedonia.com**
 7. Choose verification method (usually mail postcard or phone)
 8. Add business hours
 9. Upload **ALL** your best dog photos (at least 20-30)
@@ -31,7 +31,7 @@ These are the **TOP 5 CRITICAL** actions you must take TODAY for maximum SEO imp
 1. Go to: https://search.google.com/search-console
 2. Sign in with Google account
 3. Click "Add Property"
-4. Enter: **https://trufflesmacedonia.com**
+4. Enter: **https://lagottomacedonia.com**
 5. Choose verification method: **HTML file**
 6. Download the verification file (looks like `google1234567890abcdef.html`)
 7. Upload it to your `/public` folder in your project
@@ -89,7 +89,7 @@ These are the **TOP 5 CRITICAL** actions you must take TODAY for maximum SEO imp
 2. Page name: **Truffles Macedonia**
 3. Category: **Pet Breeder** or **Dog Breeder**
 4. Bio: Use your description
-5. Add website: **https://trufflesmacedonia.com**
+5. Add website: **https://lagottomacedonia.com**
 6. Add profile picture (your logo)
 7. Add cover photo (beautiful photo of your dogs)
 8. Fill out "About" section completely

@@ -314,7 +314,7 @@ Lagotto Romagnolo, dog breeder, truffle hunting dogs, champion bloodlines, FCI k
 - Pet Services
 
 ### Contact Info
-- Website: https://trufflesmacedonia.com
+- Website: https://lagottomacedonia.com
 - Email: truffles.macedonia@gmail.com
 - Phone: [Your phone number]
 - Location: North Macedonia, Europe

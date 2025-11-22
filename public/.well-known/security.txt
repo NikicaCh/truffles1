@@ -1,8 +1,8 @@
 Contact: mailto:truffles.macedonia@gmail.com
 Expires: 2026-12-31T23:59:59.000Z
 Preferred-Languages: en, mk
-Canonical: https://trufflesmacedonia.com/.well-known/security.txt
-Policy: https://trufflesmacedonia.com
+Canonical: https://lagottomacedonia.com/.well-known/security.txt
+Policy: https://lagottomacedonia.com
 
 # Please report any security issues to us via email.
 

@@ -41,7 +41,7 @@
 
 - [ ] **Setup Google Search Console**
   - Go to: https://search.google.com/search-console
-  - Add property: trufflesmacedonia.com
+  - Add property: lagottomacedonia.com
   - Verify using HTML file method
   - Submit sitemap.xml
   - Monitor indexing and errors

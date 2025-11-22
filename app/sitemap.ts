@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next'
 import { availableDogs, ourDogs } from '@/data/dogs'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://trufflesmacedonia.com'
+  const baseUrl = 'https://lagottomacedonia.com'
   const today = new Date().toISOString().split('T')[0]
   
   // Only include the homepage - hash fragments (#breed, #farm, etc.) are not allowed in sitemaps
