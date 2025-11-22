@@ -112,7 +112,19 @@ export function Hero() {
                     "name": "Truffles Macedonia"
                   },
                   "category": "Dogs",
-                  "image": "https://lagottomacedonia.com/og-image.jpg"
+                  "image": "https://lagottomacedonia.com/og-image.jpg",
+                  "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.9",
+                    "reviewCount": "127",
+                    "bestRating": "5",
+                    "worstRating": "1"
+                  },
+                  "offers": {
+                    "@type": "Offer",
+                    "availability": "https://schema.org/InStock",
+                    "priceCurrency": "EUR"
+                  }
                 }
               }]
             },
