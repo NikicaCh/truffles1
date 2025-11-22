@@ -6,7 +6,7 @@ export function Sitemap() {
   useEffect(() => {
     // Generate sitemap data for SEO
     const generateSitemap = () => {
-      const baseUrl = 'https://trufflesmacedonia.com';
+      const baseUrl = 'https://lagottomacedonia.com';
       const currentDate = new Date().toISOString().split('T')[0];
       
       const urls = [

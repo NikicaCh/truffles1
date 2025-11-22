@@ -23,7 +23,7 @@ export default function App() {
         title: `${currentDog.name} - ${currentDog.gender} Lagotto Romagnolo Puppy | Truffles Macedonia`,
         description: `Meet ${currentDog.name}, a beautiful ${currentDog.gender.toLowerCase()} ${currentDog.color} Lagotto Romagnolo puppy from champion bloodlines. ${currentDog.age}, health tested, perfect for ${suitable}. Available at Truffles Macedonia.`,
         keywords: `${currentDog.name}, Lagotto Romagnolo puppy, ${currentDog.gender}, ${currentDog.color}, ${currentDog.age}, champion bloodlines, truffle hunting dog, hypoallergenic dog, Truffles Macedonia`,
-        canonicalUrl: `https://trufflesmacedonia.com/dog/${dogId}`,
+        canonicalUrl: `https://lagottomacedonia.com/dog/${dogId}`,
         dogName: currentDog.name,
       };
     }
@@ -32,7 +32,7 @@ export default function App() {
       title: "Truffles Macedonia - Premium Lagotto Romagnolo | Champion Bloodlines | Truffle Dogs Europe",
       description: "Europe's leading Lagotto Romagnolo breeders since 1999. Champion bloodline puppies, health tested, authentic Italian truffle hunting dogs. Located in Macedonia, shipping worldwide. Expert breeding, lifetime support.",
       keywords: "Lagotto Romagnolo breeder, Lagotto Romagnolo puppies for sale, truffle hunting dogs, champion bloodlines, European dog breeder, Macedonia, Italian water dog, hypoallergenic dogs, curly coat dogs, working dogs, family dogs, truffle dogs Europe",
-      canonicalUrl: "https://trufflesmacedonia.com"
+      canonicalUrl: "https://lagottomacedonia.com"
     };
   };
 

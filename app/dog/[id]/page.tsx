@@ -46,7 +46,7 @@ export function generateMetadata({ params }: Props): Metadata {
       } Lagotto Romagnolo. ${dog.age}, health tested, ${features}.`;
   }
 
-  const canonical = `https://trufflesmacedonia.com/dog/${params.id}`;
+  const canonical = `https://lagottomacedonia.com/dog/${params.id}`;
 
   return {
     title,

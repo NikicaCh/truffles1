@@ -149,7 +149,7 @@ export function SEOHead({
               "name": "Lagotto Romagnolo Puppies",
               "description": "Healthy, champion bloodline Lagotto Romagnolo puppies",
               "seller": {
-                "@id": "https://trufflesmacedonia.com/#business"
+                "@id": "https://lagottomacedonia.com/#business"
               }
             }
           ],
@@ -199,14 +199,14 @@ export function SEOHead({
           "name": "Truffles Macedonia",
           "description": "Premium Lagotto Romagnolo in Macedonia",
           "publisher": {
-            "@id": "https://trufflesmacedonia.com/#business"
+            "@id": "https://lagottomacedonia.com/#business"
           },
           "potentialAction": [
             {
               "@type": "SearchAction",
               "target": {
                 "@type": "EntryPoint",
-                "urlTemplate": "https://trufflesmacedonia.com/search?q={search_term_string}"
+                "urlTemplate": "https://lagottomacedonia.com/search?q={search_term_string}"
               },
               "query-input": "required name=search_term_string"
             }

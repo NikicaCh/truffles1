@@ -70,7 +70,7 @@ export function Breadcrumbs({ items, onNavigate }: BreadcrumbsProps) {
               )}
               
               {item.href && (
-                <meta itemProp="item" content={`https://trufflesmacedonia.com${item.href}`} />
+                <meta itemProp="item" content={`https://lagottomacedonia.com${item.href}`} />
               )}
             </motion.li>
           ))}

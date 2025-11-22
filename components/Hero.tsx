@@ -77,9 +77,9 @@ export function Hero() {
             "name": "Truffles Macedonia",
             "alternateName": "Truffles Macedonia Lagotto Romagnolo",
             "description": "Premier Lagotto Romagnolo breeder in Europe specializing in champion bloodlines, truffle hunting dogs, and health-tested puppies. FCI-recognized kennel with award-winning breeding program.",
-            "url": "https://trufflesmacedonia.com",
+            "url": "https://lagottomacedonia.com",
             "telephone": "+389-XX-XXX-XXX",
-            "image": "https://trufflesmacedonia.com/og-image.jpg",
+            "image": "https://lagottomacedonia.com/og-image.jpg",
             "address": {
               "@type": "PostalAddress",
               "addressCountry": "MK",
@@ -112,7 +112,7 @@ export function Hero() {
                     "name": "Truffles Macedonia"
                   },
                   "category": "Dogs",
-                  "image": "https://trufflesmacedonia.com/og-image.jpg"
+                  "image": "https://lagottomacedonia.com/og-image.jpg"
                 }
               }]
             },
