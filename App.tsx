@@ -6,6 +6,7 @@ import { Breadcrumbs } from "./components/Breadcrumbs";
 import { Sitemap } from "./components/Sitemap";
 import { availableDogs } from "./data/dogs";
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/next"
 
 export default function App() {
   const { currentRoute, dogId, navigate } = useRouter();
@@ -66,7 +67,7 @@ export default function App() {
       {/* SEO Components */}
       <SEOHead {...seoData} />
       <Sitemap />
-
+      <Analytics />
       <Navigation currentRoute={currentRoute} onNavigate={navigate} />
       
       {/* Breadcrumbs for better navigation structure */}
