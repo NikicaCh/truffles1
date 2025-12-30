@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
-import logo from "../public/logotto.webp";
+import logoSquare from "../public/logotto.webp";
 
 /* Tiny config */
 const TITLE_COLOR_HEX = "#B8860B";
@@ -69,7 +69,7 @@ export function Navigation({ currentRoute, onNavigate }: NavigationProps) {
 
           <div className={`relative h-[100px] w-[60px] overflow-visible ${ANIM} [animation-delay:100ms]`}>
                 <Image
-                  src={logo}
+                  src={logoSquare}
                   alt="Truffles Macedonia logo"
                   fill
                   priority
@@ -116,7 +116,7 @@ export function Navigation({ currentRoute, onNavigate }: NavigationProps) {
           {/* Left: Logo (set width/height to control aspect) */}
               <div className={`relative h-[100px] w-[220px] overflow-visible ${ANIM} [animation-delay:100ms]`}>
                 <Image
-                  src={logo}
+                  src={logoSquare}
                   alt="Truffles Macedonia logo"
                   fill
                   priority

@@ -1,9 +1,9 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { motion, useScroll, useTransform, useInView } from "motion/react";
 import { ChevronLeft, ChevronRight, MapPin, Phone, Star, Award, Heart, Shield } from "lucide-react";
 //import dog1 from "/public/all/dog1.jpeg";
@@ -24,23 +24,27 @@ export function Hero() {
   const headerOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
   const carouselOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
-  // SEO-optimized hero images showcasing the breed
+  // Hero images (picked from /public/GALLERY)
   const heroImages = [
     {
-      src: "/GALLERY/lagotto-europe-lightbrown-with-trophy.jpeg",
-      alt: "Champion Lagotto Romagnolo with trophy from Truffles Macedonia",
+      src: "/GALLERY/lagotto-europe-white-with-brown-eyes-puppy.jpeg",
+      alt: "Lagotto Romagnolo puppy portrait with black and white markings",
     },
     {
-      src: "/GALLERY/lagotto-europe-white-competition.jpeg",
-      alt: "Lagotto Romagnolo at professional dog show competition",
+      src: "/GALLERY/lagotto-europe-brown-puppy-with-white-legs.jpeg",
+      alt: "Brown Lagotto Romagnolo puppy with white legs",
     },
     {
-      src: "/GALLERY/lagotto-europe-dark-brown-forest.jpeg",
-      alt: "Beautiful dark brown Lagotto Romagnolo in natural forest environment",
+      src: "/GALLERY/lagotto-europe-brown-puppy.jpeg",
+      alt: "Brown Lagotto Romagnolo puppy",
     },
     {
-      src: "/GALLERY/lagotto-europe-puppies-on-couch.jpeg",
-      alt: "Adorable Lagotto Romagnolo puppies relaxing at home",
+      src: "/GALLERY/man-feeding-dogs-lagotto-romagnolo.webp",
+      alt: "Handler feeding Lagotto Romagnolo dogs",
+    },
+    {
+      src: "/GALLERY/white-lagotto-romagnolo.webp",
+      alt: "White Lagotto Romagnolo dog outdoors",
     },
   ];
 
@@ -66,7 +70,7 @@ export function Hero() {
   }, []);
 
   return (
-    <article id="home" ref={heroRef} className="relative min-h-screen overflow-hidden bg-gradient-to-br from-yellow-50/50 via-white to-orange-50/50 pt-20">
+    <article id="home" ref={heroRef} className="relative min-h-screen overflow-hidden bg-gradient-to-br from-yellow-50/50 via-white to-orange-50/50 pt-16 sm:pt-20">
       {/* Structured Data - JSON-LD for SEO */}
       <script
         type="application/ld+json"
@@ -156,12 +160,12 @@ export function Hero() {
         <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-amber-200/8 rounded-full blur-xl" />
       </motion.div>
 
-      <div className="relative z-10 min-h-screen flex flex-col justify-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-4 sm:py-8 lg:py-16">
+      <div className="relative z-10 min-h-[calc(100svh-4rem)] sm:min-h-screen flex flex-col justify-start sm:justify-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-6 sm:py-8 lg:py-16">
           
           {/* SEO-Optimized Header Content */}
           <motion.header 
-            className="text-center mb-12"
+            className="text-center mb-6 sm:mb-12"
             style={{ opacity: headerOpacity }}
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -179,7 +183,7 @@ export function Hero() {
 
 
             <motion.p 
-              className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto mb-4 leading-relaxed"
+              className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto mb-4 leading-relaxed"
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -188,20 +192,20 @@ export function Hero() {
             </motion.p>
 
             <motion.div 
-              className="flex flex-wrap justify-center gap-4 mb-8"
+              className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-6 sm:mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              <Badge variant="outline" className="text-sm px-4 py-2">
+              <Badge variant="outline" className="text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2">
                 <MapPin className="h-4 w-4 mr-2" />
                 Macedonia, Europe
               </Badge>
-              <Badge variant="outline" className="text-sm px-4 py-2">
+              <Badge variant="outline" className="text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2">
                 <Award className="h-4 w-4 mr-2" />
                 10+ Years Experience
               </Badge>
-              <Badge variant="outline" className="text-sm px-4 py-2">
+              <Badge variant="outline" className="text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2">
                 <Star className="h-4 w-4 mr-2" />
                 Champion Bloodlines
               </Badge>
@@ -210,7 +214,7 @@ export function Hero() {
 
           {/* Main Image Carousel */}
           <motion.section 
-            className="max-w-5xl mx-auto mb-16"
+            className="max-w-5xl mx-auto mb-10 sm:mb-16"
             initial={{ opacity: 0, y: 50, scale: 0.95 }}
             animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
             transition={{ duration: 1, delay: 0.8 }}
@@ -219,7 +223,7 @@ export function Hero() {
           >
             <Card className="overflow-hidden shadow-xl bg-white border border-gray-200">
               <CardContent className="p-0">
-                <div className="relative aspect-video bg-gray-100 overflow-hidden">
+                <div className="relative h-[420px] sm:h-auto sm:aspect-video bg-gray-100 overflow-hidden">
                   
                   {/* Main Image */}
                   <motion.div
@@ -230,12 +234,25 @@ export function Hero() {
                     transition={{ duration: 0.7 }}
                     className="relative w-full h-full"
                   >
-                    <ImageWithFallback
+                    {/* Blurred background fills side space for non-wide images */}
+                    <Image
+                      src={heroImages[currentImageIndex].src}
+                      alt=""
+                      aria-hidden="true"
+                      fill
+                      className="object-cover scale-110 blur-2xl opacity-35"
+                      sizes="(min-width: 1024px) 1024px, (min-width: 640px) calc(100vw - 3rem), calc(100vw - 2rem)"
+                      priority={currentImageIndex === 0}
+                    />
+
+                    {/* Foreground image shows the full photo without cropping */}
+                    <Image
                       src={heroImages[currentImageIndex].src}
                       alt={heroImages[currentImageIndex].alt}
-                      className="w-full h-full object-cover"
-                      loading="eager"
-                      fetchPriority="high"
+                      fill
+                      className="object-cover sm:object-contain p-0 sm:p-4 drop-shadow-md"
+                      sizes="(min-width: 1024px) 1024px, (min-width: 640px) calc(100vw - 3rem), calc(100vw - 2rem)"
+                      priority={currentImageIndex === 0}
                     />
                     
                     {/* Image Overlay with Title */}
@@ -254,17 +271,17 @@ export function Hero() {
                   {/* Navigation Arrows */}
                   <button
                     onClick={prevImage}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/70 hover:bg-black/90 text-white rounded-full flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-white"
+                    className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-black/70 hover:bg-black/90 text-white rounded-full flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-white"
                     aria-label="Previous image"
                   >
-                    <ChevronLeft className="h-6 w-6" />
+                    <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
                   </button>
                   <button
                     onClick={nextImage}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/70 hover:bg-black/90 text-white rounded-full flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-white"
+                    className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-black/70 hover:bg-black/90 text-white rounded-full flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-white"
                     aria-label="Next image"
                   >
-                    <ChevronRight className="h-6 w-6" />
+                    <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
                   </button>
 
                   {/* Image Indicators */}
@@ -273,7 +290,7 @@ export function Hero() {
                       <button
                         key={index}
                         onClick={() => setCurrentImageIndex(index)}
-                        className={`w-3 h-3 rounded-full transition-colors ${
+                        className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-colors ${
                           index === currentImageIndex ? 'bg-white' : 'bg-white/50'
                         }`}
                         aria-label={`View image ${index + 1}`}
@@ -284,13 +301,13 @@ export function Hero() {
 
                 {/* SEO-Rich Content Below Images */}
                 <motion.div 
-                  className="p-8 bg-white"
+                  className="p-4 sm:p-8 bg-white"
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.8, delay: 1.2 }}
                 >
                   <div className="text-center max-w-4xl mx-auto">
-                    <h2 className="text-2xl md:text-3xl text-foreground mb-6">
+                    <h2 className="text-xl sm:text-2xl md:text-3xl text-foreground mb-4 sm:mb-6">
                     Our dogs have achieved Champion, Interchampion, and International Champion titles - a testament to their world-class quality and breeding excellence.                    </h2>
                     {/* <p className="text-muted-foreground mb-6 leading-relaxed">
                       The Lagotto Romagnolo is the only dog breed specifically bred for truffle hunting. Originating from the wetlands of Italy, these intelligent, loyal, and hypoallergenic dogs have been perfecting their skills for centuries. At Truffles Macedonia, we preserve this ancient heritage while producing modern family companions that excel both in the field and at home.
@@ -302,7 +319,7 @@ export function Hero() {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                       <Button 
                         size="lg" 
-                        className="bg-yellow-600 hover:bg-yellow-700 text-white px-8"
+                        className="bg-yellow-600 hover:bg-yellow-700 text-white px-6 sm:px-8 w-full sm:w-auto"
                         onClick={() => scrollToSection('puppies')}
                       >
                         View Available Puppies
@@ -310,7 +327,7 @@ export function Hero() {
                       <Button 
                         size="lg" 
                         variant="outline" 
-                        className="border-yellow-600 text-yellow-700 hover:bg-yellow-50 px-8"
+                        className="border-yellow-600 text-yellow-700 hover:bg-yellow-50 px-6 sm:px-8 w-full sm:w-auto"
                         onClick={() => scrollToSection('breed')}
                       >
                         Learn About Lagotto Romagnolo
@@ -320,74 +337,6 @@ export function Hero() {
                 </motion.div>
               </CardContent>
             </Card>
-          </motion.section>
-
-          {/* Key Features - Enhanced for SEO */}
-          <motion.section 
-            className="max-w-6xl mx-auto"
-            initial={{ opacity: 0, y: 50 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 1.4 }}
-            aria-label="Why Choose Truffles Macedonia"
-          >
-            <motion.h2 
-              className="text-2xl md:text-3xl text-center text-foreground mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 1.5 }}
-            >
-              Why Choose Truffles Macedonia for Your Lagotto Romagnolo
-            </motion.h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                { 
-                  icon: Award, 
-                  title: "Champion Bloodlines & Proven Excellence", 
-                  desc: "Multi-Champion, Interchampion, and International Champion titles across Europe and beyond — including World Championship placements",
-                  keywords: "confirming top genetics, structure, and temperament."
-                },
-                { 
-                  icon: Shield, 
-                  title: "Natural Environment & Ethical Breeding", 
-                  desc: "Dogs raised cage-free in a 1,000 m² forest area at 850 m altitude, enjoying natural light, fresh air, and social interaction for balanced behavior and optimal development.",
-                  // keywords: "health tested, health guarantee, veterinary care"
-                },
-                { 
-                  icon: Heart, 
-                  title: "Health Tested & Lifetime Support", 
-                  desc: "Comprehensive health screening including hip/elbow X-rays, DNA testing for hereditary diseases, and ongoing veterinary care",
-                  keywords: "backed by a 2-year health guarantee and lifelong breeder guidance"
-                }
-              ].map((feature, index) => (
-                <motion.article
-                  key={index}
-                  initial={{ opacity: 0, y: 30, scale: 0.9 }}
-                  animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-                  transition={{ duration: 0.6, delay: 1.6 + index * 0.1 }}
-                  whileHover={{ scale: 1.02, y: -5 }}
-                >
-                  <Card className="p-8 text-center hover:shadow-xl transition-all duration-300 bg-white border-2 border-gray-100 h-full">
-                    <CardContent className="p-0">
-                      <motion.div 
-                        className="relative mb-6"
-                        whileHover={{ scale: 1.1, rotate: 5 }}
-                        transition={{ type: "spring", stiffness: 400 }}
-                      >
-                        <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-yellow-500 to-amber-500 flex items-center justify-center shadow-lg">
-                          <feature.icon className="h-8 w-8 text-white" />
-                        </div>
-                      </motion.div>
-                      <h3 className="text-xl text-foreground mb-4">{feature.title}</h3>
-                      <p className="text-muted-foreground leading-relaxed mb-3">{feature.desc}</p>
-                      <div className="text-xs text-muted-foreground/60 italic">
-                        {feature.keywords}
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.article>
-              ))}
-            </div>
           </motion.section>
 
           <motion.section 

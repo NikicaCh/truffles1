@@ -17,15 +17,34 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
       <Navigation currentRoute={'home'} onNavigate={() => router.push('/')} />
-      <main>
-        <Hero />
-        <AboutBreed />
-        <AboutFarm />
-        <AvailablePuppies />
-        <OurDogs />
-        <Gallery />
-        <Awards />
-        <Contact />
+      <main className="flex flex-col">
+        <div className="order-1">
+          <Hero />
+        </div>
+
+        {/* Mobile: show Our Dogs right after Hero. Desktop: keep original order. */}
+        <div className="order-2 md:order-5">
+          <OurDogs />
+        </div>
+
+        <div className="order-3 md:order-2">
+          <AboutBreed />
+        </div>
+        <div className="order-4 md:order-3">
+          <AboutFarm />
+        </div>
+        <div className="order-5 md:order-4">
+          <AvailablePuppies />
+        </div>
+        <div className="order-6">
+          <Gallery />
+        </div>
+        <div className="order-7">
+          <Awards />
+        </div>
+        <div className="order-8">
+          <Contact />
+        </div>
       </main>
       <Footer />
     </div>

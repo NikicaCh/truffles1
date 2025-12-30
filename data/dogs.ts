@@ -88,8 +88,7 @@ export const availableDogs: Dog[] = [
     },
     images: [
       "/GALLERY/lagotto-europe-brown-puppy.jpeg",
-      "/GALLERY/lagotto-europe-brown-puppy-grass.jpeg",
-      "/GALLERY/lagotto-europe-brown-puppy-garden.jpeg"
+      "/GALLERY/lagotto-europe-brown-puppy-grass.jpeg"
     ],
     features: [
       "Champion bloodlines",

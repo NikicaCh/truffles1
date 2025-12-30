@@ -221,9 +221,9 @@ export function SEOHead({
           "url": "https://lagottomacedonia.com",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://lagottomacedonia.com/logo.png",
-            "width": 512,
-            "height": 512
+            "url": "https://lagottomacedonia.com/logotto.webp",
+            "width": 716,
+            "height": 661
           },
           "contactPoint": [
             {

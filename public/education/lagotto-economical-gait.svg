@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Economical gait vs overreaching schematic">
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}
+      .panel{fill:#ffffff;stroke:#e5e7eb;stroke-width:2}
+      .title{font:700 40px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial;fill:#0f172a}
+      .subtitle{font:500 22px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial;fill:#475569}
+      .label{font:700 26px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial;fill:#0f172a}
+      .hint{font:500 18px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial;fill:#64748b}
+      .line{stroke:#0f172a;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;fill:none}
+      .ok{stroke:#16a34a;stroke-width:6;fill:none}
+      .bad{stroke:#ef4444;stroke-width:6;fill:none}
+      .ground{stroke:#94a3b8;stroke-width:4}
+      .step{stroke:#0ea5e9;stroke-width:6;stroke-linecap:round;fill:none}
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1200" height="800"/>
+  <text class="title" x="60" y="90">Movement: Easy vs Uneconomic</text>
+  <text class="subtitle" x="60" y="130">A working Lagotto should move with minimal effort and good balance.</text>
+
+  <rect class="panel" x="60" y="170" width="520" height="560" rx="24"/>
+  <rect class="panel" x="620" y="170" width="520" height="560" rx="24"/>
+
+  <text class="label" x="110" y="230">Typical: easy, ground-covering</text>
+  <text class="hint" x="110" y="262">Balanced reach &amp; drive; stable topline.</text>
+
+  <text class="label" x="670" y="230">Atypical: overreaching / tiring</text>
+  <text class="hint" x="670" y="262">Often flashy — but wastes energy.</text>
+
+  <line class="ground" x1="110" y1="640" x2="530" y2="640"/>
+  <line class="ground" x1="670" y1="640" x2="1090" y2="640"/>
+
+  <!-- left dog: economical gait -->
+  <path class="line" d="M170 520 C220 455, 310 430, 410 430 C470 430, 515 450, 545 475" />
+  <path class="line" d="M210 520 L200 610" />
+  <path class="line" d="M300 520 L300 625" />
+  <path class="line" d="M430 520 L430 615" />
+  <path class="line" d="M505 495 L545 565" />
+  <path class="line" d="M150 470 C150 435, 190 405, 235 405 C270 405, 298 425, 312 450" />
+  <path class="step" d="M240 610 C270 585, 300 585, 330 610" />
+  <path class="ok" d="M135 320 L165 350 L210 305" />
+  <text class="hint" x="225" y="330">economical</text>
+
+  <!-- right dog: overreaching -->
+  <path class="line" d="M720 520 C770 455, 880 425, 1010 425 C1065 425, 1105 445, 1130 475" />
+  <path class="line" d="M765 520 L755 610" />
+  <path class="line" d="M845 520 L860 640" />
+  <path class="line" d="M990 520 L990 610" />
+  <path class="line" d="M1065 490 L1125 575" />
+  <path class="line" d="M700 470 C700 435, 740 405, 785 405 C820 405, 850 425, 865 450" />
+  <path class="step" d="M820 640 C860 600, 920 600, 960 640" />
+  <path class="bad" d="M680 310 L740 370 M740 310 L680 370" />
+  <text class="hint" x="760" y="330">tiring</text>
+</svg>
+
+

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Lagotto outline proportion: square vs rectangle">
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}
+      .panel{fill:#ffffff;stroke:#e5e7eb;stroke-width:2}
+      .title{font:700 40px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial;fill:#0f172a}
+      .subtitle{font:500 22px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial;fill:#475569}
+      .label{font:600 24px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial;fill:#0f172a}
+      .hint{font:500 18px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial;fill:#64748b}
+      .line{stroke:#0f172a;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;fill:none}
+      .boxOk{stroke:#16a34a;stroke-width:6;fill:none}
+      .boxBad{stroke:#ef4444;stroke-width:6;fill:none;stroke-dasharray:12 10}
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1200" height="800"/>
+  <text class="title" x="60" y="90">Proportion: Square Outline (Functional)</text>
+  <text class="subtitle" x="60" y="130">Square doesn’t mean “low on leg” — it means balanced length and height.</text>
+
+  <rect class="panel" x="60" y="170" width="520" height="560" rx="24"/>
+  <rect class="panel" x="620" y="170" width="520" height="560" rx="24"/>
+
+  <text class="label" x="110" y="230">Correct: inserted in a square</text>
+  <text class="hint" x="110" y="262">Athletic, balanced, easy to work all day.</text>
+
+  <text class="label" x="670" y="230">Incorrect: too long (rectangle)</text>
+  <text class="hint" x="670" y="262">Looks stretched; often less efficient and agile.</text>
+
+  <!-- left schematic dog -->
+  <path class="line" d="M170 520 C200 460, 270 430, 360 430 C420 430, 470 450, 500 480" />
+  <path class="line" d="M200 520 L200 610" />
+  <path class="line" d="M290 520 L290 620" />
+  <path class="line" d="M410 520 L410 615" />
+  <path class="line" d="M480 500 L520 560" />
+  <path class="line" d="M150 470 C150 435, 190 405, 230 405 C260 405, 285 420, 295 440" />
+  <path class="line" d="M160 480 C130 485, 120 515, 145 530" />
+  <rect class="boxOk" x="210" y="360" width="260" height="260" rx="12"/>
+
+  <!-- right schematic dog -->
+  <path class="line" d="M720 520 C760 460, 860 430, 990 430 C1045 430, 1085 450, 1120 480" />
+  <path class="line" d="M760 520 L760 610" />
+  <path class="line" d="M855 520 L855 620" />
+  <path class="line" d="M980 520 L980 615" />
+  <path class="line" d="M1050 500 L1110 560" />
+  <path class="line" d="M700 470 C700 435, 740 405, 780 405 C810 405, 835 420, 845 440" />
+  <path class="line" d="M710 480 C680 485, 670 515, 695 530" />
+  <rect class="boxBad" x="740" y="380" width="340" height="220" rx="12"/>
+</svg>
+
+

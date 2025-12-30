@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Lagotto chest depth to elbow schematic">
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}
+      .panel{fill:#ffffff;stroke:#e5e7eb;stroke-width:2}
+      .title{font:700 40px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial;fill:#0f172a}
+      .subtitle{font:500 22px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial;fill:#475569}
+      .label{font:700 26px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial;fill:#0f172a}
+      .hint{font:500 18px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial;fill:#64748b}
+      .line{stroke:#0f172a;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;fill:none}
+      .measure{stroke:#0ea5e9;stroke-width:6;stroke-linecap:round;fill:none}
+      .guide{stroke:#94a3b8;stroke-width:3;stroke-dasharray:10 10;fill:none}
+      .ok{stroke:#16a34a;stroke-width:6;fill:none}
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1200" height="800"/>
+  <text class="title" x="60" y="90">Front &amp; Chest: Depth to Elbow</text>
+  <text class="subtitle" x="60" y="130">We want lung room and support — without a “barrel-front” that wastes motion.</text>
+
+  <rect class="panel" x="60" y="170" width="1080" height="560" rx="24"/>
+  <text class="label" x="110" y="230">Target: chest reaches the elbows</text>
+  <text class="hint" x="110" y="262">Balanced depth helps endurance; elbows sit close to the body for efficient movement.</text>
+
+  <!-- schematic dog (side view) -->
+  <path class="line" d="M220 540 C270 470, 360 440, 480 440 C600 440, 700 470, 780 520" />
+  <path class="line" d="M260 540 L260 650" />
+  <path class="line" d="M360 540 L360 660" />
+  <path class="line" d="M620 540 L620 655" />
+  <path class="line" d="M740 520 L820 610" />
+  <path class="line" d="M200 480 C200 440, 245 410, 295 410 C330 410, 360 430, 375 455" />
+
+  <!-- chest & elbow markers -->
+  <path class="ok" d="M330 500 C330 470, 360 455, 390 455 C430 455, 460 475, 460 510 C460 540, 440 565, 405 565 C365 565, 330 540, 330 500 Z" />
+  <circle cx="360" cy="540" r="10" fill="#0f172a"/>
+  <text class="hint" x="385" y="548">elbow</text>
+
+  <!-- measurement: withers to ground and chest depth -->
+  <path class="guide" d="M560 350 L560 690" />
+  <path class="guide" d="M560 350 L610 350" />
+  <path class="guide" d="M560 690 L610 690" />
+  <path class="measure" d="M590 360 L590 680" />
+  <text class="hint" x="620" y="530">height at withers</text>
+
+  <path class="measure" d="M420 455 L420 540" />
+  <text class="hint" x="445" y="505">chest depth to elbow</text>
+</svg>
+
+
