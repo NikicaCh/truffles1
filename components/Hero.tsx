@@ -4,8 +4,9 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
+import { UpcomingLitter } from "./UpcomingLitter";
 import { motion, useScroll, useTransform, useInView } from "motion/react";
-import { ChevronLeft, ChevronRight, MapPin, Phone, Star, Award, Heart, Shield } from "lucide-react";
+import { ChevronLeft, ChevronRight, MapPin, Phone, Star, Award } from "lucide-react";
 //import dog1 from "/public/all/dog1.jpeg";
 //import dog1 from "../public/dog1.jpeg";
 
@@ -27,24 +28,24 @@ export function Hero() {
   // Hero images (picked from /public/GALLERY)
   const heroImages = [
     {
-      src: "/GALLERY/lagotto-europe-white-with-brown-eyes-puppy.jpeg",
-      alt: "Lagotto Romagnolo puppy portrait with black and white markings",
-    },
-    {
-      src: "/GALLERY/lagotto-europe-brown-puppy-with-white-legs.jpeg",
-      alt: "Brown Lagotto Romagnolo puppy with white legs",
-    },
-    {
-      src: "/GALLERY/lagotto-europe-brown-puppy.jpeg",
-      alt: "Brown Lagotto Romagnolo puppy",
-    },
-    {
       src: "/GALLERY/man-feeding-dogs-lagotto-romagnolo.webp",
       alt: "Handler feeding Lagotto Romagnolo dogs",
     },
     {
-      src: "/GALLERY/white-lagotto-romagnolo.webp",
-      alt: "White Lagotto Romagnolo dog outdoors",
+      src: "/GALLERY/lagotto-romagnolo-puppy-chocolate-lounge.webp",
+      alt: "Chocolate Lagotto Romagnolo puppy lounging indoors",
+    },
+    {
+      src: "/GALLERY/lagotto-romagnolo-puppy-cream-portrait.webp",
+      alt: "Cream Lagotto Romagnolo puppy portrait on marble floor",
+    },
+    {
+      src: "/GALLERY/lagotto-romagnolo-puppy-cream-profile.webp",
+      alt: "Cream Lagotto Romagnolo puppy in side profile indoors",
+    },
+    {
+      src: "/GALLERY/lagotto-romagnolo-puppy-brown-white-sitting.webp",
+      alt: "Brown and white Lagotto Romagnolo puppy sitting indoors",
     },
   ];
 
@@ -182,34 +183,7 @@ export function Hero() {
               </motion.h1>
 
 
-            <motion.p 
-              className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto mb-4 leading-relaxed"
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              Truffles Macedonia is a registered FCI kennel with over a decade of experience working with Lagotto Romagnolo dogs. Ranked among the most awarded kennels in Macedonia and beyond, we are recognized as one of Europe’s leading Lagotto Romagnolo breeders.
-            </motion.p>
-
-            <motion.div 
-              className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-6 sm:mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.6 }}
-            >
-              <Badge variant="outline" className="text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2">
-                <MapPin className="h-4 w-4 mr-2" />
-                Macedonia, Europe
-              </Badge>
-              <Badge variant="outline" className="text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2">
-                <Award className="h-4 w-4 mr-2" />
-                10+ Years Experience
-              </Badge>
-              <Badge variant="outline" className="text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2">
-                <Star className="h-4 w-4 mr-2" />
-                Champion Bloodlines
-              </Badge>
-            </motion.div>
+          <UpcomingLitter onContact={() => scrollToSection("contact")} />
           </motion.header>
 
           {/* Main Image Carousel */}
@@ -337,6 +311,43 @@ export function Hero() {
                 </motion.div>
               </CardContent>
             </Card>
+          </motion.section>
+
+          {/* About Section */}
+          <motion.section
+            className="max-w-4xl mx-auto mb-10 sm:mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 1.4 }}
+          >
+            <motion.p 
+              className="text-base sm:text-lg md:text-xl text-muted-foreground text-center leading-relaxed mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 1.5 }}
+            >
+              Truffles Macedonia is a registered FCI kennel with over a decade of experience working with Lagotto Romagnolo dogs. Ranked among the most awarded kennels in Macedonia and beyond, we are recognized as one of Europe's leading Lagotto Romagnolo breeders.
+            </motion.p>
+            
+            <motion.div 
+              className="flex flex-wrap justify-center gap-2 sm:gap-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 1.7 }}
+            >
+              <Badge variant="outline" className="text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2">
+                <MapPin className="h-4 w-4 mr-2" />
+                Macedonia, Europe
+              </Badge>
+              <Badge variant="outline" className="text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2">
+                <Award className="h-4 w-4 mr-2" />
+                10+ Years Experience
+              </Badge>
+              <Badge variant="outline" className="text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2">
+                <Star className="h-4 w-4 mr-2" />
+                Champion Bloodlines
+              </Badge>
+            </motion.div>
           </motion.section>
 
           <motion.section 

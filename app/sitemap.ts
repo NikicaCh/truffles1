@@ -8,7 +8,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Only include the homepage - hash fragments (#breed, #farm, etc.) are not allowed in sitemaps
   // They are client-side navigation anchors, not separate pages
   const routes: MetadataRoute.Sitemap = [
-    { url: `${baseUrl}/`, lastModified: today, changeFrequency: 'weekly', priority: 1 }
+    { url: `${baseUrl}/`, lastModified: today, changeFrequency: 'weekly', priority: 1 },
+    { url: `${baseUrl}/upcoming-litter`, lastModified: today, changeFrequency: 'weekly', priority: 0.8 }
   ]
 
   // Include available puppies in sitemap
