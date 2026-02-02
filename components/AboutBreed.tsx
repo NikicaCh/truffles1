@@ -126,7 +126,7 @@ export function AboutBreed() {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <ImageWithFallback
-              src="/GALLERY/lagotto-romagnolo-puppy-window-stand.webp"
+              src="/GALLERY/lagotto-romagnolo-laying-down.webp"
                  alt="Lagotto Romagnolo puppy standing by the window showing curly coat and alert posture"
                 className="w-full h-80 object-cover rounded-lg shadow-lg mt-40"
 

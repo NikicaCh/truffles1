@@ -32,19 +32,15 @@ export function Hero() {
       alt: "Handler feeding Lagotto Romagnolo dogs",
     },
     {
-      src: "/GALLERY/lagotto-romagnolo-puppy-chocolate-lounge.webp",
+      src: "/GALLERY/brown-white-lagotto-standing-on-window.webp",
       alt: "Chocolate Lagotto Romagnolo puppy lounging indoors",
     },
     {
-      src: "/GALLERY/lagotto-romagnolo-puppy-cream-portrait.webp",
+      src: "/GALLERY/white-lagotto-indoor.webp",
       alt: "Cream Lagotto Romagnolo puppy portrait on marble floor",
     },
     {
-      src: "/GALLERY/lagotto-romagnolo-puppy-cream-profile.webp",
-      alt: "Cream Lagotto Romagnolo puppy in side profile indoors",
-    },
-    {
-      src: "/GALLERY/lagotto-romagnolo-puppy-brown-white-sitting.webp",
+      src: "/GALLERY/brow-white-lagotto-romagnolo.webp",
       alt: "Brown and white Lagotto Romagnolo puppy sitting indoors",
     },
   ];

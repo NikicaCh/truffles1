@@ -75,7 +75,7 @@ export function AboutFarm() {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <ImageWithFallback
-              src="/GALLERY/lagotto-romagnolo-puppy-cream-lounge.webp"
+              src="/GALLERY/lagotto-romagnolo-laying.webp"
               alt="Cream Lagotto Romagnolo puppy resting indoors at Truffles Macedonia"
               className="w-full h-80 object-cover rounded-lg shadow-lg"
               />
