@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/upcoming-litter`, lastModified: today, changeFrequency: 'weekly', priority: 0.8 }
   ]
 
-  // Include available puppies in sitemap
+  // Include individual dog profile pages
   const dogRoutes: MetadataRoute.Sitemap = availableDogs.map(dog => ({
     url: `${baseUrl}/dog/${dog.id}`,
     lastModified: today,

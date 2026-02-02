@@ -4,7 +4,7 @@
   "description": "Premier European Lagotto Romagnolo breeder with champion bloodlines and truffle hunting dogs",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
+  "background_color": "#000000",
   "theme_color": "#EAB308",
   "orientation": "portrait-primary",
   "icons": [

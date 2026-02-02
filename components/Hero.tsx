@@ -6,7 +6,7 @@ import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { UpcomingLitter } from "./UpcomingLitter";
 import { motion, useScroll, useTransform, useInView } from "motion/react";
-import { ChevronLeft, ChevronRight, MapPin, Phone, Star, Award } from "lucide-react";
+import { ChevronLeft, ChevronRight, MapPin, Star, Award } from "lucide-react";
 //import dog1 from "/public/all/dog1.jpeg";
 //import dog1 from "../public/dog1.jpeg";
 
@@ -289,13 +289,6 @@ export function Hero() {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                       <Button 
                         size="lg" 
-                        className="bg-yellow-600 hover:bg-yellow-700 text-white px-6 sm:px-8 w-full sm:w-auto"
-                        onClick={() => scrollToSection('puppies')}
-                      >
-                        View Available Puppies
-                      </Button>
-                      <Button 
-                        size="lg" 
                         variant="outline" 
                         className="border-yellow-600 text-yellow-700 hover:bg-yellow-50 px-6 sm:px-8 w-full sm:w-auto"
                         onClick={() => scrollToSection('breed')}
@@ -407,42 +400,6 @@ export function Hero() {
             </div>
           </motion.section>
 
-          {/* Call-to-Action Section */}
-          <motion.section 
-            className="text-center mt-16 max-w-4xl mx-auto"
-            initial={{ opacity: 0, y: 50 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 2.2 }}
-          >
-            <Card className="p-8 bg-gradient-to-r from-yellow-50 to-orange-50 border-yellow-200">
-              <CardContent className="p-0">
-                <h3 className="text-2xl text-foreground mb-4">
-                  Ready to Welcome a Lagotto Romagnolo Into Your Family?
-                </h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  Join the growing community of Lagotto Romagnolo enthusiasts worldwide. Contact us today to learn about our current litters, upcoming breeding plans, and find your perfect truffle hunting companion.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button 
-                    size="lg" 
-                    className="bg-yellow-600 hover:bg-yellow-700 text-white px-8"
-                    onClick={() => scrollToSection('contact')}
-                  >
-                    <Phone className="h-4 w-4 mr-2" />
-                    Contact Us Today
-                  </Button>
-                  <Button 
-                    size="lg" 
-                    variant="outline" 
-                    className="border-yellow-600 text-yellow-700 hover:bg-yellow-50 px-8"
-                    onClick={() => scrollToSection('puppies')}
-                  >
-                    View Available Puppies
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.section>
         </div>
       </div>
 

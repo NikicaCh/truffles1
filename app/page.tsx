@@ -5,7 +5,6 @@ import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
 import { AboutBreed } from "@/components/AboutBreed";
 import { AboutFarm } from "@/components/AboutFarm";
-import { AvailablePuppies } from "@/components/AvailablePuppies";
 import { Gallery } from "@/components/Gallery";
 import { Awards } from "@/components/Awards";
 import { Contact } from "@/components/Contact";
@@ -32,9 +31,6 @@ export default function HomePage() {
         </div>
         <div className="order-4 md:order-3">
           <AboutFarm />
-        </div>
-        <div className="order-5 md:order-4">
-          <AvailablePuppies />
         </div>
         <div className="order-6">
           <Gallery />
