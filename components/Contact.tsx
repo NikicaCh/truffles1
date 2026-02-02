@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
@@ -9,6 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 import { MapPin, Phone, Mail, Clock, LucideIcon } from "lucide-react";
 import { toast } from "sonner";
 import { motion, useScroll, useTransform, useInView } from "motion/react";
+import { useForm, ValidationError } from "@formspree/react";
 
 interface ContactItem {
   icon: LucideIcon;
@@ -19,6 +20,7 @@ interface ContactItem {
 }
 
 export function Contact() {
+  const [state, handleSubmit] = useForm("manlqwrj");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -40,8 +42,8 @@ export function Contact() {
 
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  useEffect(() => {
+    if (!state.succeeded) return;
     toast.success("Thank you for your inquiry!", {
       description: "We'll contact you within 24 hours. We look forward to connecting with you!",
       duration: 5000,
@@ -56,7 +58,7 @@ export function Contact() {
       timeframe: "",
       message: "",
     });
-  };
+  }, [state.succeeded]);
 
   const handleInputChange = (field: string, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -188,17 +190,20 @@ export function Contact() {
                       <Label htmlFor="name">Full Name *</Label>
                       <Input
                         id="name"
+                        name="name"
                         placeholder="John Doe"
                         className={fieldStyle}
                         value={formData.name}
                         onChange={(e) => handleInputChange("name", e.target.value)}
                         required
                       />
+                      <ValidationError prefix="Name" field="name" errors={state.errors} />
                     </div>
                     <div>
                       <Label htmlFor="email">Email Address *</Label>
                       <Input
                         id="email"
+                        name="email"
                         type="email"
                         placeholder="name@example.com"
                         className={fieldStyle}
@@ -206,6 +211,7 @@ export function Contact() {
                         onChange={(e) => handleInputChange("email", e.target.value)}
                         required
                       />
+                      <ValidationError prefix="Email" field="email" errors={state.errors} />
                     </div>
                   </motion.div>
 
@@ -220,21 +226,25 @@ export function Contact() {
                       <Label htmlFor="phone">Phone Number</Label>
                       <Input
                         id="phone"
+                        name="phone"
                         placeholder="+389 7x xxx xxx"
                         className={fieldStyle}
                         value={formData.phone}
                         onChange={(e) => handleInputChange("phone", e.target.value)}
                       />
+                      <ValidationError prefix="Phone" field="phone" errors={state.errors} />
                     </div>
                     <div>
                       <Label htmlFor="country">Country</Label>
                       <Input
                         id="country"
+                        name="country"
                         placeholder="Your country"
                         className={fieldStyle}
                         value={formData.country}
                         onChange={(e) => handleInputChange("country", e.target.value)}
                       />
+                      <ValidationError prefix="Country" field="country" errors={state.errors} />
                     </div>
                   </motion.div>
 
@@ -247,7 +257,8 @@ export function Contact() {
                   >
                     <div>
                       <Label htmlFor="inquiryType">Inquiry Type</Label>
-                      <Select onValueChange={(value) => handleInputChange("inquiryType", value)}>
+                      <input type="hidden" name="inquiryType" value={formData.inquiryType} />
+                      <Select value={formData.inquiryType} onValueChange={(value) => handleInputChange("inquiryType", value)}>
                         <SelectTrigger className={selectTriggerStyle}>
                           <SelectValue placeholder="Select inquiry type" />
                         </SelectTrigger>
@@ -259,10 +270,12 @@ export function Contact() {
                           <SelectItem value="adult-dog">Adult Dog Availability</SelectItem>
                         </SelectContent>
                       </Select>
+                      <ValidationError prefix="Inquiry Type" field="inquiryType" errors={state.errors} />
                     </div>
                     <div>
                       <Label htmlFor="timeframe">When are you looking to adopt?</Label>
-                      <Select onValueChange={(value) => handleInputChange("timeframe", value)}>
+                      <input type="hidden" name="timeframe" value={formData.timeframe} />
+                      <Select value={formData.timeframe} onValueChange={(value) => handleInputChange("timeframe", value)}>
                         <SelectTrigger className={selectTriggerStyle}>
                           <SelectValue placeholder="Select timeframe" />
                         </SelectTrigger>
@@ -274,6 +287,7 @@ export function Contact() {
                           <SelectItem value="flexible">Flexible</SelectItem>
                         </SelectContent>
                       </Select>
+                      <ValidationError prefix="Timeframe" field="timeframe" errors={state.errors} />
                     </div>
                   </motion.div>
 
@@ -284,7 +298,8 @@ export function Contact() {
                     transition={{ duration: 0.6, delay: 0.8 }}
                   >
                     <Label htmlFor="preferredColor">Preferred Color</Label>
-                    <Select onValueChange={(value) => handleInputChange("preferredColor", value)}>
+                    <input type="hidden" name="preferredColor" value={formData.preferredColor} />
+                    <Select value={formData.preferredColor} onValueChange={(value) => handleInputChange("preferredColor", value)}>
                       <SelectTrigger className={selectTriggerStyle}>
                         <SelectValue placeholder="Select preferred color" />
                       </SelectTrigger>
@@ -296,6 +311,7 @@ export function Contact() {
                         <SelectItem value="no-preference">No Preference</SelectItem>
                       </SelectContent>
                     </Select>
+                    <ValidationError prefix="Preferred Color" field="preferredColor" errors={state.errors} />
                   </motion.div>
 
                   {/* Message */}
@@ -307,12 +323,14 @@ export function Contact() {
                     <Label htmlFor="message">Message</Label>
                     <Textarea
                       id="message"
+                      name="message"
                       rows={5}
                       className="border-2 border-gray-50 rounded-lg bg-white/90 px-4 py-3 focus:bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition mt-2"
                       placeholder="Tell us about your family, experience with dogs, living situation, and any specific questions you have..."
                       value={formData.message}
                       onChange={(e) => handleInputChange("message", e.target.value)}
                     />
+                    <ValidationError prefix="Message" field="message" errors={state.errors} />
                   </motion.div>
 
                   {/* Submit */}
@@ -323,8 +341,8 @@ export function Contact() {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    <Button type="submit" className="w-full">
-                      Send Inquiry
+                    <Button type="submit" className="w-full" disabled={state.submitting}>
+                      {state.submitting ? "Sending..." : "Send Inquiry"}
                     </Button>
                   </motion.div>
 

@@ -126,8 +126,8 @@ export function AboutBreed() {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <ImageWithFallback
-              src="/GALLERY/lagotto-europe-white-and-brown-puppy-forest.jpeg"
-                 alt="Lagotto Romagnolo puppy in forest showing characteristic curly coat and natural environment"
+              src="/GALLERY/lagotto-romagnolo-puppy-window-stand.webp"
+                 alt="Lagotto Romagnolo puppy standing by the window showing curly coat and alert posture"
                 className="w-full h-80 object-cover rounded-lg shadow-lg mt-40"
 
               />
