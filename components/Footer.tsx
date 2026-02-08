@@ -1,3 +1,6 @@
+"use client";
+
+import Link from "next/link";
 import { Separator } from "./ui/separator";
 import { MapPin, Phone, Mail, Heart } from "lucide-react";
 
@@ -95,6 +98,14 @@ export function Footer() {
                 >
                   Contact
                 </button>
+              </li>
+              <li>
+                <Link 
+                  href="/upcoming-litters"
+                  className="hover:text-primary-foreground transition-colors"
+                >
+                  Upcoming Litters
+                </Link>
               </li>
             </ul>
           </div>

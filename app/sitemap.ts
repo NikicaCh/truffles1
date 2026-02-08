@@ -9,7 +9,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // They are client-side navigation anchors, not separate pages
   const routes: MetadataRoute.Sitemap = [
     { url: `${baseUrl}/`, lastModified: today, changeFrequency: 'weekly', priority: 1 },
-    { url: `${baseUrl}/upcoming-litter`, lastModified: today, changeFrequency: 'weekly', priority: 0.8 }
+    { url: `${baseUrl}/upcoming-litter`, lastModified: today, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${baseUrl}/upcoming-litters`, lastModified: today, changeFrequency: 'weekly', priority: 0.8 }
   ]
 
   // Include individual dog profile pages

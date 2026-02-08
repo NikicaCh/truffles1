@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import { Button } from "./ui/button";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
@@ -13,6 +14,7 @@ const NAV_LINKS = [
   { id: "breed", label: "About Breed" },
   { id: "farm", label: "Our Farm" },
   { id: "our-dogs", label: "Our Dogs" },
+  { id: "upcoming-litter", label: "Upcoming Litters" },
   { id: "gallery", label: "Gallery" },
   { id: "awards", label: "Awards" },
   { id: "contact", label: "Contact" },
@@ -28,6 +30,9 @@ interface NavigationProps {
 export function Navigation({ currentRoute, onNavigate }: NavigationProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
+  const isHome = pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 50);
@@ -46,11 +51,19 @@ export function Navigation({ currentRoute, onNavigate }: NavigationProps) {
   }
 
   function handleHome() {
-    if (currentRoute === "home") scrollToSection("home");
+    if (isHome && currentRoute === "home") scrollToSection("home");
+    else if (!isHome) router.push("/");
     else onNavigate("home");
   }
 
   function handleNavClick(id: string) {
+    if (!isHome) {
+      if (id === "home") router.push("/");
+      else if (id === "upcoming-litter") router.push("/upcoming-litters");
+      else router.push(`/#${id}`);
+      setIsMenuOpen(false);
+      return;
+    }
     id === "home" ? handleHome() : scrollToSection(id);
   }
 
@@ -64,20 +77,17 @@ export function Navigation({ currentRoute, onNavigate }: NavigationProps) {
         {/* ===== MOBILE HEADER ===== */}
         <div className="md:hidden relative flex items-center justify-between h-auto py-3">
           {/* Left: Logo (square-ish) */}
-          <div className="absolute left-0 flex items-center">
-
-          <div className={`relative h-[100px] w-[60px] overflow-visible ${ANIM} [animation-delay:100ms]`}>
-                <Image
-                  src={logoSquare}
-                  alt="Truffles Macedonia logo"
-                  fill
-                  priority
-                  sizes="60px"
-                  className="object-contain transition-transform duration-300 ease-out group-hover:scale-110 origin-left will-change-transform"
-                />
-            
-          </div>
-            
+          <div className="absolute left-0 flex items-center shrink-0">
+            <div className={`relative h-[100px] w-[60px] overflow-hidden ${ANIM} [animation-delay:100ms]`}>
+              <Image
+                src={logoSquare}
+                alt="Truffles Macedonia logo"
+                fill
+                priority
+                sizes="60px"
+                className="object-contain transition-transform duration-300 ease-out group-hover:scale-110 origin-left will-change-transform"
+              />
+            </div>
           </div>
 
           {/* Center: Title (h1, two lines, animated) */}
@@ -113,16 +123,15 @@ export function Navigation({ currentRoute, onNavigate }: NavigationProps) {
         {/* ===== DESKTOP HEADER ===== */}
         <div className="hidden md:flex items-center justify-between h-36">
           {/* Left: Logo (set width/height to control aspect) */}
-              <div className={`relative h-[100px] w-[220px] overflow-visible ${ANIM} [animation-delay:100ms]`}>
-                <Image
-                  src={logoSquare}
-                  alt="Truffles Macedonia logo"
-                  fill
-                  priority
-                  sizes="180px"
-                  className="object-contain transition-transform duration-300 ease-out group-hover:scale-110 origin-left will-change-transform"
-                />
-            
+          <div className={`relative h-[100px] w-[220px] shrink-0 overflow-hidden ${ANIM} [animation-delay:100ms]`}>
+            <Image
+              src={logoSquare}
+              alt="Truffles Macedonia logo"
+              fill
+              priority
+              sizes="220px"
+              className="object-contain transition-transform duration-300 ease-out group-hover:scale-110 origin-left will-change-transform"
+            />
           </div>
 
           {/* Right: Links (animated as a group) */}
