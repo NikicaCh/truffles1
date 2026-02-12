@@ -448,6 +448,9 @@ export const ourDogs : Dog[] = [
       elbows: "Excellent",
       patella: "Excellent"
     },
+    awards: [
+      "MK JCH - Macedonian Junior Champion"
+    ],
     images: [
       "/IGOR/lagotto-romagnolo-igor-first-place-winner-cacib-mavrovo-show.webp",
       "/IGOR/lagotto-romagnolo-igor-conformation-stance-with-handler-in-backyard.webp",
