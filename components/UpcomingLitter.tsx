@@ -64,7 +64,7 @@ export function UpcomingLitter({ onContact }: UpcomingLitterProps) {
                 <li key={l.id} className="list-none">
                   <span className="text-foreground font-medium">{l.mother.name.split(" from ")[0]}</span>
                   <span className="mx-1">×</span>
-                  <span className="text-foreground font-medium">{l.father.name.split(" ")[0]}</span>
+                  <span className="text-foreground font-medium">{l.father.name.split(" del Casale Brioso")[0]}</span>
                   <span className="ml-1">· {l.date}</span>
                 </li>
               ))}

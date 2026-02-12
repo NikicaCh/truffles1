@@ -24,7 +24,7 @@ export const UPCOMING_LITTERS: Litter[] = [
       dogId: "lara-from-truffles-macedonia",
     },
     father: {
-      name: "Igor del Casale Brioso",
+      name: "JCH MK Igor del Casale Brioso",
       flag: "IT",
       dogId: "igor-del-casale-brioso",
     },
@@ -39,7 +39,7 @@ export const UPCOMING_LITTERS: Litter[] = [
       dogId: "astra-from-truffles-macedonia",
     },
     father: {
-      name: "Igor del Casale Brioso",
+      name: "JCH MK Igor del Casale Brioso",
       flag: "IT",
       dogId: "igor-del-casale-brioso",
     },
@@ -54,7 +54,7 @@ export const UPCOMING_LITTERS: Litter[] = [
       dogId: "kali-from-truffles-macedonia",
     },
     father: {
-      name: "Igor del Casale Brioso",
+      name: "JCH MK Igor del Casale Brioso",
       flag: "IT",
       dogId: "igor-del-casale-brioso",
     },
