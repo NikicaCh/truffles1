@@ -9,7 +9,14 @@ import logoSquare from "../public/logotto.webp";
 /* Tiny config */
 const TITLE_COLOR_HEX = "#B8860B";
 const ANIM = "motion-safe:animate-fade-in-up";
-const NAV_LINKS = [
+type NavLink = {
+  id: string;
+  label: string;
+  icon?: typeof PawPrint;
+  isNew?: boolean;
+};
+
+const NAV_LINKS: NavLink[] = [
   { id: "home", label: "Home" },
   { id: "breed", label: "About Breed" },
   { id: "farm", label: "Our Farm" },
@@ -18,7 +25,7 @@ const NAV_LINKS = [
   { id: "gallery", label: "Gallery" },
   { id: "awards", label: "Awards" },
   { id: "contact", label: "Contact" },
-] as const;
+];
 
 type Route = "home" | "dog-profile";
 
