@@ -1,14 +1,9 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { Navigation } from "./Navigation";
+import { useRouter } from "next/navigation";
 
 export function UpcomingLittersNav() {
   const router = useRouter();
-  return (
-    <Navigation
-      currentRoute="dog-profile"
-      onNavigate={() => router.push("/")}
-    />
-  );
+  return <Navigation currentRoute="home" onNavigate={() => router.push("/")} />;
 }

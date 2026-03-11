@@ -84,6 +84,14 @@ export function Footer() {
               </li>
 
               <li>
+                <Link
+                  href="/new-litters"
+                  className="hover:text-primary-foreground transition-colors"
+                >
+                  New Litters
+                </Link>
+              </li>
+              <li>
                 <button 
                   onClick={() => scrollToSection('gallery')}
                   className="hover:text-primary-foreground transition-colors"
@@ -98,14 +106,6 @@ export function Footer() {
                 >
                   Contact
                 </button>
-              </li>
-              <li>
-                <Link 
-                  href="/upcoming-litters"
-                  className="hover:text-primary-foreground transition-colors"
-                >
-                  Upcoming Litters
-                </Link>
               </li>
             </ul>
           </div>

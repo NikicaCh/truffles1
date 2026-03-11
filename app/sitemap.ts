@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { availableDogs, ourDogs } from '@/data/dogs'
+import { getNewLitters } from '@/data/litters'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://lagottomacedonia.com'
@@ -9,9 +10,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // They are client-side navigation anchors, not separate pages
   const routes: MetadataRoute.Sitemap = [
     { url: `${baseUrl}/`, lastModified: today, changeFrequency: 'weekly', priority: 1 },
-    { url: `${baseUrl}/upcoming-litter`, lastModified: today, changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${baseUrl}/upcoming-litters`, lastModified: today, changeFrequency: 'weekly', priority: 0.8 }
+    { url: `${baseUrl}/new-litters`, lastModified: today, changeFrequency: 'weekly', priority: 0.8 }
   ]
+
+  const newLitterRoutes: MetadataRoute.Sitemap = getNewLitters().map((litter) => ({
+    url: `${baseUrl}/new-litters/${litter.slug}`,
+    lastModified: today,
+    changeFrequency: 'weekly',
+    priority: 0.75
+  }))
 
   // Include individual dog profile pages
   const dogRoutes: MetadataRoute.Sitemap = availableDogs.map(dog => ({
@@ -29,7 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85
   }))
 
-  return [...routes, ...dogRoutes, ...ourDogRoutes]
+  return [...routes, ...newLitterRoutes, ...dogRoutes, ...ourDogRoutes]
 }
 
 

@@ -178,7 +178,6 @@ export function Hero() {
               <span className="text-yellow-600"> - Premium Lagotto Romagnolo</span>
               </motion.h1>
 
-
           <UpcomingLitter onContact={() => scrollToSection("contact")} />
           </motion.header>
 

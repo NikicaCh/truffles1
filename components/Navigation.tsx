@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { Button } from "./ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, PawPrint } from "lucide-react";
 import Image from "next/image";
 import logoSquare from "../public/logotto.webp";
 
@@ -14,7 +14,7 @@ const NAV_LINKS = [
   { id: "breed", label: "About Breed" },
   { id: "farm", label: "Our Farm" },
   { id: "our-dogs", label: "Our Dogs" },
-  { id: "upcoming-litter", label: "Upcoming Litters" },
+  { id: "upcoming-litter", label: "New Litters", icon: PawPrint, isNew: true },
   { id: "gallery", label: "Gallery" },
   { id: "awards", label: "Awards" },
   { id: "contact", label: "Contact" },
@@ -57,9 +57,14 @@ export function Navigation({ currentRoute, onNavigate }: NavigationProps) {
   }
 
   function handleNavClick(id: string) {
+    if (id === "upcoming-litter") {
+      router.push("/new-litters");
+      setIsMenuOpen(false);
+      return;
+    }
+
     if (!isHome) {
       if (id === "home") router.push("/");
-      else if (id === "upcoming-litter") router.push("/upcoming-litters");
       else router.push(`/#${id}`);
       setIsMenuOpen(false);
       return;
@@ -140,9 +145,19 @@ export function Navigation({ currentRoute, onNavigate }: NavigationProps) {
               <button
                 key={l.id}
                 onClick={() => handleNavClick(l.id)}
-                className="text-foreground hover:text-primary px-2 py-2 rounded-md transition-colors whitespace-nowrap"
+                className={`px-2 py-2 rounded-md transition-colors whitespace-nowrap inline-flex items-center gap-1.5 ${
+                  l.isNew
+                    ? "text-violet-700 hover:text-violet-800 bg-violet-50 hover:bg-violet-100"
+                    : "text-foreground hover:text-primary"
+                }`}
               >
+                {l.icon ? <l.icon className="h-4 w-4" /> : null}
                 {l.label}
+                {l.isNew ? (
+                  <span className="ml-1 rounded-full bg-violet-600 text-white text-[10px] font-semibold px-1.5 py-0.5 leading-none">
+                    NEW
+                  </span>
+                ) : null}
               </button>
             ))}
           </div>
@@ -156,9 +171,19 @@ export function Navigation({ currentRoute, onNavigate }: NavigationProps) {
                 <button
                   key={l.id}
                   onClick={() => handleNavClick(l.id)}
-                  className="text-foreground hover:text-primary block px-3 py-2 rounded-md w-full text-left transition-colors"
+                  className={`block px-3 py-2 rounded-md w-full text-left transition-colors inline-flex items-center gap-1.5 ${
+                    l.isNew
+                      ? "text-violet-700 hover:text-violet-800 bg-violet-50 hover:bg-violet-100"
+                      : "text-foreground hover:text-primary"
+                  }`}
                 >
+                  {l.icon ? <l.icon className="h-4 w-4" /> : null}
                   {l.label}
+                  {l.isNew ? (
+                    <span className="ml-1 rounded-full bg-violet-600 text-white text-[10px] font-semibold px-1.5 py-0.5 leading-none">
+                      NEW
+                    </span>
+                  ) : null}
                 </button>
               ))}
             </div>

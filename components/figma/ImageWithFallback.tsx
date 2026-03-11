@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from 'react'
 
 const ERROR_IMG_SRC =
@@ -11,8 +13,6 @@ export function ImageWithFallback(props: any) {
   }
 
   const { src, alt, style, className, ...rest } = props
-
-  console.log("SRC: ", src)
 
   return didError ? (
     <div
