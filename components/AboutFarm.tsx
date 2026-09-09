@@ -24,7 +24,7 @@ export function AboutFarm() {
     },
     {
       title: "Health Testing",
-      description: "All breeding dogs are fully DNA-tested and have certified hip and elbow X-rays. Ensuring sound genetics and freedom from hereditary diseases All breeding dogs undergo comprehensive health testing including hips, elbows, and eyes",
+      description: "All breeding dogs are fully DNA-tested and have certified hip, elbow, and eye exams, ensuring sound genetics and freedom from hereditary diseases",
       icon: "🧬"
     },
     {

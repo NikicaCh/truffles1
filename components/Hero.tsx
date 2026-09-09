@@ -126,7 +126,7 @@ export function Hero() {
                     "availability": "https://schema.org/InStock",
                     "priceCurrency": "EUR",
                     "price": "2500",
-                    "priceValidUntil": "2025-12-31"
+                    "priceValidUntil": "2026-12-31"
                   }
                 }
               }]
@@ -168,14 +168,14 @@ export function Hero() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <motion.h1 
-            className="hidden md:block text-3xl md:text-5xl lg:text-6xl text-foreground mb-6 leading-tight"
+            <motion.h1
+            className="hidden md:block text-3xl md:text-5xl lg:text-6xl text-foreground mb-10 lg:mb-12 leading-tight"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
             >
               <span className="text-yellow-600">Truffles Macedonia</span>
-              <span className="text-yellow-600"> - Premium Lagotto Romagnolo</span>
+              <span className="text-foreground"> - Premium Lagotto Romagnolo</span>
               </motion.h1>
 
           <UpcomingLitter onContact={() => scrollToSection("contact")} />
@@ -359,7 +359,7 @@ export function Hero() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 2 }}
             >
-              Over a dedicated breeding excellence has made us one of Europe's most respected Lagotto Romagnolo breeders
+              Over a decade of dedicated breeding excellence has made us one of Europe's most respected Lagotto Romagnolo breeders
             </motion.p>
             
             <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
@@ -367,7 +367,7 @@ export function Hero() {
                 { 
                   number: "10+", 
                   label: "Years Breeding Excellence", 
-                  desc: "Established 1015",
+                  desc: "Established 2014",
                   schema: "foundingDate"
                 },
                 { 

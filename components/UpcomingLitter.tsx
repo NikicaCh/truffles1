@@ -29,20 +29,20 @@ export function UpcomingLitter({ onContact }: UpcomingLitterProps) {
     >
       <Card className="relative overflow-hidden border border-border bg-white shadow-lg">
         <div className="h-px w-full bg-border" />
-        <CardContent className="p-3 sm:p-4">
+        <CardContent className="p-6 sm:p-8">
           <div className="text-center">
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 mb-2">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 mb-3">
               <Badge className="bg-yellow-600 text-white text-[11px] sm:text-sm px-3 sm:px-4 py-1 sm:py-1.5 shadow-sm">
                 <Calendar className="h-3.5 w-3.5 sm:h-4 sm:w-4 mr-1.5" />
                 New Litters
               </Badge>
             </div>
 
-            <h2 className="text-lg sm:text-xl font-bold text-foreground mb-2 leading-tight">
-              We are happy to share our newest litters
+            <h2 className="text-lg sm:text-xl font-bold text-foreground mb-3 leading-tight">
+              We are happy to share our newest litter{newLitters.length === 1 ? "" : "s"}
             </h2>
-            <p className="text-xs sm:text-sm text-muted-foreground mb-4">
-              {newLitters.length} litters are now born. You can view each poster and meet both parents before contacting us.
+            <p className="text-xs sm:text-sm text-muted-foreground mb-6">
+              {newLitters.length} litter{newLitters.length === 1 ? "" : "s"} {newLitters.length === 1 ? "is" : "are"} now born. You can view each poster and meet both parents before contacting us.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-center items-center">
@@ -55,7 +55,7 @@ export function UpcomingLitter({ onContact }: UpcomingLitterProps) {
               <Button
                 variant="outline"
                 size="lg"
-                className="w-full sm:w-auto border-yellow-600 text-yellow-700 hover:bg-yellow-50"
+                className="w-full sm:w-auto"
                 onClick={() => {
                   if (onContact) {
                     onContact();
